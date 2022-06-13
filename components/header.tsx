@@ -11,7 +11,7 @@ const Header: React.FC = () => {
 			/>
 			<nav
 				className={
-					'flex justify-center items-center absolute top-0 left-0 z-10 w-full h-full'
+					'flex justify-left px-20 items-center absolute top-0 left-0 z-10 w-full h-full'
 				}
 			>
 				<NavLink href={'/'} label={'Home'} />

@@ -2,16 +2,25 @@
 module.exports = {
 	content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
 	theme: {
-		extend: {},
+		extend: {
+			width: {
+				'main': '40rem'
+			}
+		},
 		colors: {
 			transparent: 'transparent',
 			current: 'currentColor',
 			black: '#010409',
 			white: '#ffffff',
 			gray: '#333333',
-			red: '#c0392b',
-			purple: '#8e44ad',
+			purple: '#c471ed',
+			lightblue: '#12c2e9',
+			red: '#f64f59'
 		},
+		fontFamily: {
+			text: ['Signika', 'sans-serif'],
+			title: ['Raleway', 'sans-serif']
+		}
 	},
 	plugins: [],
 };

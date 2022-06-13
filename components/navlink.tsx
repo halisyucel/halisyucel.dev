@@ -12,7 +12,7 @@ const NavLink: React.FC<NavLink> = ({ href, label }) => {
 	return (
 		<Link href={href}>
 			<a
-				className={`text-4xl h-12 font-extrabold last:mr-0 mr-6${
+				className={`text-xl h-7 font-extrabold last:mr-0 mr-6${
 					router.pathname === href ? ' text-gradient' : ''
 				}`}
 			>

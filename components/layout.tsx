@@ -13,7 +13,9 @@ const Layout: React.FC<Layout> = ({ children }) => {
 				<title>Halis Yücel</title>
 			</Head>
 			<Header />
-			{children}
+			<main className={'w-main'}>
+				{children}
+			</main>
 		</React.Fragment>
 	);
 };
