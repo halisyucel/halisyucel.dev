@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* components */
+@layer components {
+	.gradient {
+		@apply bg-gradient-to-r from-lightblue via-purple to-red;
+	}
+	.text-gradient {
+		@apply text-transparent bg-clip-text gradient;
+	}
+}
+/* custom css */
