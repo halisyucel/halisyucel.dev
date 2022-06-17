@@ -1,5 +1,5 @@
-import React from 'react';
 import Loading from './loading';
+import React from 'react';
 
 interface Button {
 	children: React.ReactNode;
@@ -9,7 +9,13 @@ interface Button {
 	loading?: boolean;
 }
 
-const Button: React.FC<Button> = ({ children, type = 'button', className = '', loading=false, props }) => {
+const Button: React.FC<Button> = ({
+	children,
+	type = 'button',
+	className = '',
+	loading = false,
+	props,
+}) => {
 	return (
 		<button
 			type={type}
@@ -31,10 +37,25 @@ const Button: React.FC<Button> = ({ children, type = 'button', className = '', l
 			].join(' ')}
 			{...props}
 		>
-			<span className={['absolute', 'inset-0', 'w-full', 'h-full', 'flex', 'justify-center', 'items-center', (loading ? 'inline' : 'hidden')].join(' ')}>
+			<span
+				className={[
+					'absolute',
+					'inset-0',
+					'w-full',
+					'h-full',
+					'flex',
+					'justify-center',
+					'items-center',
+					loading ? 'inline' : 'hidden',
+				].join(' ')}
+			>
 				<Loading />
 			</span>
-			<span className={['inline-block', 'px-2', (loading ? 'opacity-0' : 'opacity-100') ].join(' ')}>
+			<span
+				className={['inline-block', 'px-2', loading ? 'opacity-0' : 'opacity-100'].join(
+					' ',
+				)}
+			>
 				{children}
 			</span>
 		</button>
