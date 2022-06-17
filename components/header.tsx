@@ -1,8 +1,6 @@
-import ExternalLink from './external-link';
 import Flex from './flex';
 import NavLink from './navlink';
 import React from 'react';
-import { AiFillGithub, AiFillMediumCircle } from 'react-icons/ai';
 
 const Header: React.FC = () => {
 	return (
@@ -23,14 +21,6 @@ const Header: React.FC = () => {
 				<NavLink href={'/bookmarks'} label={'Bookmarks'} />
 				<Flex />
 				<NavLink href={'/contact'} label={'Contact'} />
-				<ExternalLink
-					href={process.env.NEXT_PUBLIC_MEDIUM_URL as string}
-					icon={<AiFillMediumCircle />}
-				/>
-				<ExternalLink
-					href={process.env.NEXT_PUBLIC_GITHUB_URL as string}
-					icon={<AiFillGithub />}
-				/>
 			</nav>
 		</header>
 	);
