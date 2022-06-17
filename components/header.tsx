@@ -1,5 +1,8 @@
-import React from 'react';
+import ExternalLink from './external-link';
+import Flex from './flex';
 import NavLink from './navlink';
+import React from 'react';
+import { AiFillGithub, AiFillMediumCircle } from 'react-icons/ai';
 
 const Header: React.FC = () => {
 	return (
@@ -11,13 +14,23 @@ const Header: React.FC = () => {
 			/>
 			<nav
 				className={
-					'flex justify-left px-20 items-center absolute top-0 left-0 z-10 w-full h-full'
+					'flex justify-left px-80 items-center absolute top-0 left-0 z-10 w-full h-full'
 				}
 			>
 				<NavLink href={'/'} label={'Home'} />
 				<NavLink href={'/projects'} label={'Projects'} />
 				<NavLink href={'/blog'} label={'Blog'} />
 				<NavLink href={'/bookmarks'} label={'Bookmarks'} />
+				<Flex />
+				<NavLink href={'/contact'} label={'Contact'} />
+				<ExternalLink
+					href={process.env.NEXT_PUBLIC_MEDIUM_URL as string}
+					icon={<AiFillMediumCircle />}
+				/>
+				<ExternalLink
+					href={process.env.NEXT_PUBLIC_GITHUB_URL as string}
+					icon={<AiFillGithub />}
+				/>
 			</nav>
 		</header>
 	);
