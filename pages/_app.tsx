@@ -1,8 +1,8 @@
-import './global.css';
+import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 
-function MyApp({ Component, pageProps }: AppProps) {
+function HalisYucelMe({ Component, pageProps }: AppProps) {
 	return <Component {...pageProps} />;
 }
 
-export default MyApp;
+export default HalisYucelMe;
