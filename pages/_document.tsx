@@ -23,7 +23,11 @@ class MyDocument extends Document {
 						}
 					/>
 				</Head>
-				<body className={'bg-black text-white mt-20 pt-20 flex justify-center items-start'}>
+				<body
+					className={
+						'bg-black w-full text-white mt-20 pt-20 flex justify-center items-start'
+					}
+				>
 					<Main />
 					<NextScript />
 				</body>

@@ -8,8 +8,10 @@ import React from 'react';
 const Contact: NextPage = () => {
 	return (
 		<Layout>
-			<h1 className={'text-5xl font-title font-extrabold text-gradient w-fit'}>Contact me</h1>
-			<p className={'mt-6 font-text font-light text-xl'}>
+			<h1 className={'text-5xl font-title font-extrabold text-gradient w-fit mb-8'}>
+				Contact me
+			</h1>
+			<p className={'font-text font-light text-xl'}>
 				You can send an e-mail to &nbsp;
 				<a
 					className={'text-gradient font-extrabold'}
