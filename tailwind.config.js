@@ -15,19 +15,23 @@ module.exports = {
 				red: '#f64f59',
 			},
 			fontFamily: {
-				text: ['Signika', 'sans-serif'],
-				input: ['Roboto', 'sans-serif'],
+				text: ['Roboto', 'sans-serif'],
 				title: ['Raleway', 'sans-serif'],
 			},
 			borderRadius: {
 				inherit: 'inherit',
 			},
+			borderColor: {
+				loading: '#fff transparent transparent transparent',
+			},
 			boxShadow: {
-				normal: '0 0 0 4px rgba(196, 113, 237, 1)',
-				error: '0 0 0 4px rgba(18, 194, 233, 1)',
+				white: '0 0 0 4px rgba(255, 255, 255, 1)',
 			},
 			spacing: {
-				'input': 'calc(100% - 2rem)',
+				input: 'calc(100% - 2rem)',
+			},
+			animation: {
+				loading: 'spin 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite',
 			},
 		},
 	},

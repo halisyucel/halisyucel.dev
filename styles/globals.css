@@ -9,6 +9,12 @@
 	.text-gradient {
 		@apply gradient bg-clip-text text-transparent;
 	}
+	.project-link {
+		@apply mr-6 flex items-center font-title last:mr-0 hover:underline;
+	}
+	.project-gradient {
+		@apply bg-gradient-to-r from-black to-red;
+	}
 }
 /* custom css */
 ::-webkit-scrollbar {
@@ -20,4 +26,7 @@
 ::-webkit-scrollbar-thumb {
 	background: #333;
 	border-radius: 6px;
+}
+body > div {
+	width: 100%;
 }
