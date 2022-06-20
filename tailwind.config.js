@@ -13,6 +13,7 @@ module.exports = {
 				purple: '#c471ed',
 				lightblue: '#12c2e9',
 				red: '#f64f59',
+				green: '#4caf50',
 			},
 			fontFamily: {
 				text: ['Roboto', 'sans-serif'],

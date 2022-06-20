@@ -1,3 +1,4 @@
+import Footer from './footer';
 import Header from './header';
 import Head from 'next/head';
 import React from 'react';
@@ -13,7 +14,8 @@ const Layout: React.FC<Layout> = ({ children }) => {
 				<title>Halis Yücel</title>
 			</Head>
 			<Header />
-			<main className={'w-main'}>{children}</main>
+			<main className={'w-main mx-auto'}>{children}</main>
+			<Footer />
 		</React.Fragment>
 	);
 };
