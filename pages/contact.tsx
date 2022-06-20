@@ -2,13 +2,13 @@ import Button from '../components/button';
 import Divider from '../components/divider';
 import Input from '../components/input';
 import Layout from '../components/layout';
+import Message from '../components/message';
+import ReCAPTCHAWrapper from '../components/recaptcha-wrapper';
+import useRecaptcha from '../hooks/useRecaptcha';
+import { ContactFormSchema } from '../lib/contact';
+import axios from 'axios';
 import { NextPage } from 'next';
 import React, { useCallback, FormEvent, useState, useRef } from 'react';
-import { ContactFormSchema } from '../lib/contact';
-import ReCAPTCHAWrapper from '../components/recaptcha-wrapper';
-import axios from 'axios';
-import Message from '../components/message';
-import useRecaptcha from '../hooks/useRecaptcha';
 
 interface Errors {
 	name: string | null;
@@ -28,7 +28,7 @@ const DefaultErrors: Errors = {
 	name: null,
 	email: null,
 	message: null,
-	recaptcha: null
+	recaptcha: null,
 };
 
 const Contact: NextPage = () => {
@@ -38,55 +38,55 @@ const Contact: NextPage = () => {
 	const [errors, setErrors] = useState<Errors>({ ...DefaultErrors });
 	const [successMessageVisible, setSuccessMessageVisible] = useState<boolean>(false);
 	const [errorMessageVisible, setErrorMessageVisible] = useState<boolean>(false);
-	const handleSubmit = useCallback((event: FormEvent<HTMLFormElement>) => {
-		event.preventDefault();
-		setIsLoading(true);
-		setSuccessMessageVisible(false);
-		setErrorMessageVisible(false);
-		const updatedErrors: Errors = { ...DefaultErrors };
-		const elements = formRef.current?.elements as FormElements;
-		const { error, value } = ContactFormSchema.validate(
-			{
-				name: elements.name.value,
-				email: elements.email.value,
-				message: elements.message.value,
-				recaptcha: elements['g-recaptcha-response'].value
-			},
-			{
-				abortEarly: false
-			}
-		);
-		if (error) {
-			for (const errorDetail of error.details) {
-				if (updatedErrors.hasOwnProperty(errorDetail.context?.key as string))
-					(updatedErrors as any)[errorDetail.context?.key as string] = errorDetail.message;
-			}
-			setIsLoading(false);
-			setErrors(updatedErrors);
-			return;
-		}
-		setErrors({ ...DefaultErrors });
-		axios({
-			method: 'POST',
-			url: '/api/mail',
-			data: value
-		})
-			.then(() => {
-				formRef.current?.reset()
-				grecaptcha.reset(recaptcha);
-				setSuccessMessageVisible(true);
-			})
-			.catch(() => {
-				setErrorMessageVisible(true);
-			})
-			.finally(() => {
+	const handleSubmit = useCallback(
+		(event: FormEvent<HTMLFormElement>) => {
+			event.preventDefault();
+			setIsLoading(true);
+			setSuccessMessageVisible(false);
+			setErrorMessageVisible(false);
+			const updatedErrors: Errors = { ...DefaultErrors };
+			const elements = formRef.current?.elements as FormElements;
+			const { error, value } = ContactFormSchema.validate(
+				{
+					name: elements.name.value,
+					email: elements.email.value,
+					message: elements.message.value,
+					recaptcha: elements['g-recaptcha-response'].value,
+				},
+				{
+					abortEarly: false,
+				},
+			);
+			if (error) {
+				for (const errorDetail of error.details) {
+					if (updatedErrors.hasOwnProperty(errorDetail.context?.key as string))
+						(updatedErrors as any)[errorDetail.context?.key as string] =
+							errorDetail.message;
+				}
 				setIsLoading(false);
+				setErrors(updatedErrors);
+				return;
+			}
+			setErrors({ ...DefaultErrors });
+			axios({
+				method: 'POST',
+				url: '/api/mail',
+				data: value,
 			})
-	}, [
-		errors,
-		formRef,
-		recaptcha
-	]);
+				.then(() => {
+					formRef.current?.reset();
+					grecaptcha.reset(recaptcha);
+					setSuccessMessageVisible(true);
+				})
+				.catch(() => {
+					setErrorMessageVisible(true);
+				})
+				.finally(() => {
+					setIsLoading(false);
+				});
+		},
+		[errors, formRef, recaptcha],
+	);
 	return (
 		<Layout>
 			<h1 className={'text-5xl font-title font-extrabold text-gradient w-fit mb-8'}>
@@ -131,11 +131,7 @@ const Contact: NextPage = () => {
 				<ReCAPTCHAWrapper error={errors.recaptcha}>
 					<div id={'contact_recaptcha'} />
 				</ReCAPTCHAWrapper>
-				<Button
-					type={'submit'}
-					className={'mt-6'}
-					loading={isLoading}
-				>
+				<Button type={'submit'} className={'mt-6'} loading={isLoading}>
 					Send
 				</Button>
 				<Message visible={successMessageVisible} type={'success'} className={'mt-6'}>

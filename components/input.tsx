@@ -35,14 +35,14 @@ const labelOpenClasses: string[] = ['top-[-0.6rem]', 'left-4', 'text-sm', 'px-2'
 const labelCloseClasses: string[] = ['mx-6', 'my-3', 'inset-0', 'cursor-text'];
 
 const Input: React.FC<Input> = ({
-									type,
-									name,
-									className = '',
-									placeholder = '',
-									label,
-									error,
-									value,
-									onChange,
+	type,
+	name,
+	className = '',
+	placeholder = '',
+	label,
+	error,
+	value,
+	onChange,
 }) => {
 	const inputRef = useRef<HTMLInputElement>(null);
 	const [inputIsFocused, setInputIsFocused] = useState<boolean>(false);

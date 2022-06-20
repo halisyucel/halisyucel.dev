@@ -32,7 +32,11 @@ const Button: React.FC<Button> = ({
 				'focus:outline-none',
 				...className.split(' '),
 			].join(' ')}
-			onClick={loading ? (event: MouseEvent<HTMLButtonElement>) => event.preventDefault() : undefined}
+			onClick={
+				loading
+					? (event: MouseEvent<HTMLButtonElement>) => event.preventDefault()
+					: undefined
+			}
 		>
 			<span
 				className={[
