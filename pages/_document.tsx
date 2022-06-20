@@ -30,6 +30,11 @@ class MyDocument extends Document {
 				>
 					<Main />
 					<NextScript />
+					<script
+						src={'https://www.google.com/recaptcha/api.js?render=explicit&hl=tr'}
+						async
+						defer
+					/>
 				</body>
 			</Html>
 		);
