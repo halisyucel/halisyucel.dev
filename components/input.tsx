@@ -1,14 +1,14 @@
-import React, { useRef, useState, useCallback, useMemo, ChangeEvent } from 'react';
+import React, { useRef, useState, useMemo } from 'react';
 
 interface Input {
 	type: 'text' | 'textarea';
 	className?: string;
-	label?: string | null;
+	name?: string;
+	label?: string;
 	placeholder?: string;
-	error?: boolean;
-	value?: string | null;
-	onChange?: (value: string) => void | null;
-	props?: any[];
+	error?: string | null;
+	value?: string;
+	onChange?: (value: string) => void;
 }
 
 const inputClasses: string[] = [
@@ -21,6 +21,7 @@ const inputClasses: string[] = [
 	'resize-none',
 	'focus:outline-none',
 	'focus:shadow-white',
+	'transition-all',
 ];
 const labelClasses: string[] = [
 	'transition-all',
@@ -34,50 +35,36 @@ const labelOpenClasses: string[] = ['top-[-0.6rem]', 'left-4', 'text-sm', 'px-2'
 const labelCloseClasses: string[] = ['mx-6', 'my-3', 'inset-0', 'cursor-text'];
 
 const Input: React.FC<Input> = ({
-	type,
-	props,
-	className = '',
-	label = null,
-	error = false,
-	placeholder = '',
-	value = null,
-	onChange = null,
+									type,
+									name,
+									className = '',
+									placeholder = '',
+									label,
+									error,
+									value,
+									onChange,
 }) => {
 	const inputRef = useRef<HTMLInputElement>(null);
-	const [inputValue, setInputValue] = useState<string>('');
 	const [inputIsFocused, setInputIsFocused] = useState<boolean>(false);
-	const realValue = useMemo(() => {
-		if (value !== null) {
-			return value;
-		}
-		return inputValue;
-	}, [value, inputValue]);
-	const realHandleChange = useCallback(
-		(e: ChangeEvent<HTMLInputElement>) => {
-			if (onChange !== null) {
-				onChange(e.target.value);
-			}
-			setInputValue(e.target.value);
-		},
-		[onChange],
-	);
 	const labelIsOpen: boolean = useMemo(() => {
-		if (realValue.length > 0) return true;
+		const input = inputRef.current as HTMLInputElement;
+		if (input && input.value.length > 0) return true;
 		return inputIsFocused;
-	}, [inputIsFocused, realValue]);
+	}, [inputIsFocused, inputRef]);
 	const inputProps: any = useMemo(() => {
 		return {
 			ref: inputRef,
 			className: [...inputClasses, error ? 'border-red' : 'border-lightblue'].join(' '),
 			spellCheck: false,
+			autoComplete: 'off',
 			placeholder: labelIsOpen ? placeholder : '',
-			value: realValue,
-			onChange: realHandleChange,
+			name: name,
+			value: value,
+			onChange: onChange,
 			onFocus: () => setInputIsFocused(true),
 			onBlur: () => setInputIsFocused(false),
-			...props,
 		};
-	}, [inputRef, realValue, realHandleChange, labelIsOpen, placeholder, error, props]);
+	}, [inputRef, labelIsOpen, placeholder, error, name]);
 	return (
 		<div
 			className={[
@@ -104,6 +91,11 @@ const Input: React.FC<Input> = ({
 					].join(' ')}
 				>
 					{label}
+				</span>
+			)}
+			{error !== null && (
+				<span className={'mt-1 inline-flex px-6 text-xs text-red font-extrabold'}>
+					{error}
 				</span>
 			)}
 		</div>

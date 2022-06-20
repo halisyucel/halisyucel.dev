@@ -1,11 +1,10 @@
 import Loading from './loading';
-import React from 'react';
+import React, { MouseEvent } from 'react';
 
 interface Button {
 	children: React.ReactNode;
 	type?: 'button' | 'submit' | 'reset';
 	className?: string;
-	props?: any;
 	loading?: boolean;
 }
 
@@ -14,7 +13,6 @@ const Button: React.FC<Button> = ({
 	type = 'button',
 	className = '',
 	loading = false,
-	props,
 }) => {
 	return (
 		<button
@@ -29,13 +27,12 @@ const Button: React.FC<Button> = ({
 				'text-white',
 				'text-input',
 				'px-4',
-				'my-4',
 				'rounded-lg',
 				'focus:shadow-white',
 				'focus:outline-none',
 				...className.split(' '),
 			].join(' ')}
-			{...props}
+			onClick={loading ? (event: MouseEvent<HTMLButtonElement>) => event.preventDefault() : undefined}
 		>
 			<span
 				className={[
