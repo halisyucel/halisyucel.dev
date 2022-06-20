@@ -4,7 +4,7 @@ import React from 'react';
 
 const Header: React.FC = () => {
 	return (
-		<header className={'fixed top-0 left-0 w-full h-20 border-b border-gray'}>
+		<header className={'fixed top-0 left-0 w-full h-20 border-b border-gray z-10'}>
 			<div
 				className={
 					'absolute z-0 overflow-hidden w-full h-full bg-black/25 backdrop-blur top-0 left-0'
