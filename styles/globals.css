@@ -15,6 +15,12 @@
 	.project-gradient {
 		@apply bg-gradient-to-r from-black to-red;
 	}
+	.bookmark-gradient {
+		@apply bg-gradient-to-r from-black to-lightblue;
+	}
+	.bookmark-span {
+		@apply mr-6 flex items-center font-title last:mr-0;
+	}
 }
 /* custom css */
 ::-webkit-scrollbar {
