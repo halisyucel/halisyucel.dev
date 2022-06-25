@@ -1,38 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* components */
-@layer components {
-	.gradient {
-		@apply bg-gradient-to-r from-lightblue via-purple to-red;
-	}
-	.text-gradient {
-		@apply gradient bg-clip-text text-transparent;
-	}
-	.project-link {
-		@apply mr-6 flex items-center font-title last:mr-0 hover:underline;
-	}
-	.project-gradient {
-		@apply bg-gradient-to-r from-black to-red;
-	}
-	.bookmark-gradient {
-		@apply bg-gradient-to-r from-black to-lightblue;
-	}
-	.bookmark-span {
-		@apply mr-6 flex items-center font-title last:mr-0;
-	}
-}
-/* custom css */
-::-webkit-scrollbar {
-	width: 6px;
-}
-::-webkit-scrollbar-track {
-	background: transparent;
-}
-::-webkit-scrollbar-thumb {
-	background: #333;
-	border-radius: 6px;
-}
-body > div {
-	width: 100%;
+
+#__next {
+    display: flex;
+    height: 100%;
+    width: 100%;
 }
