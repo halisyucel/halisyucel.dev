@@ -8,7 +8,7 @@ export interface SettingsState {
 
 const initialState: SettingsState = {
 	theme: 'light',
-}
+};
 
 export const settingsSlice = createSlice({
 	name: 'settings',
@@ -16,9 +16,9 @@ export const settingsSlice = createSlice({
 	reducers: {
 		toggleTheme: (state: Draft<SettingsState>) => {
 			state.theme = state.theme === 'light' ? 'dark' : 'light';
-		}
+		},
 	},
-})
+});
 
 export const { toggleTheme } = settingsSlice.actions;
 

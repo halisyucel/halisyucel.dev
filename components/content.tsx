@@ -1,18 +1,18 @@
-import React from 'react';
+import BottomBar from './bottom-bar';
 import Paper from './paper';
-import SideBar from './side-bar';
+import TopBar from './top-bar';
+import React from 'react';
 
 interface ContentProps {
 	children: React.ReactNode;
 }
 
-// TODO üstede topbar yap
-
 const Content: React.FC<ContentProps> = ({ children }) => {
 	return (
-		<Paper className={'flex-1 relative'}>
+		<Paper className={'flex-1 relative py-10'}>
+			<TopBar />
 			{children}
-			<SideBar />
+			<BottomBar />
 		</Paper>
 	);
 };

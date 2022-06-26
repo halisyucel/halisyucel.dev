@@ -1,5 +1,5 @@
-import React from 'react';
 import Paper from './paper';
+import React from 'react';
 
 const NavBar = () => {
 	return (

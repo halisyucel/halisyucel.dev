@@ -6,8 +6,7 @@ const ReturnBack = () => {
 		<Button size={'xs'} className={'mr-[10px]'}>
 			<span style={{ fontFamily: 'monospace' }}>
 				<span className={'text-green-600'}>halisyucel@halisyucel</span>
-				<span className={'text-blue-600'}>~</span>
-				$ cd ..
+				<span className={'text-blue-600'}>~</span>$ cd ..
 			</span>
 		</Button>
 	);
