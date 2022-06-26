@@ -37,7 +37,7 @@ const TopBar = () => {
 		<React.Fragment>
 			<div
 				className={
-					'flex justify-center items-center bg-bg-secondary absolute left-0 top-2 w-[calc(100%-2rem)] h-10 mx-4 border-b-2'
+					'flex justify-center items-center bg-bg-secondary absolute left-0 top-2 w-[calc(100%-2rem)] h-10 mx-4 border-b-2 border-gray'
 				}
 			>
 				<span className={'flex-1'} />

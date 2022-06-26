@@ -18,10 +18,10 @@ const BottomBar = () => {
 	return (
 		<div
 			className={
-				'flex justify-center items-center bg-bg-secondary absolute left-0 bottom-2 w-[calc(100%-2rem)] h-10 mx-4 border-t-2'
+				'flex justify-center items-center bg-bg-secondary absolute left-0 bottom-2 w-[calc(100%-2rem)] h-10 mx-4 border-t-2 border-gray'
 			}
 		>
-			<ReturnBack />
+			<ReturnBack className={'mr-[10px]'}/>
 			<ToggleThemeButton />
 			<span className={'flex-1'} />
 			<Tag>
