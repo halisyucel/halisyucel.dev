@@ -11,8 +11,12 @@ module.exports = {
 			colors: {
 				'bg-primary': '#ffffff',
 				'bg-secondary': '#f0f0f2',
-				border: '#d9d9d9',
+				'gray': '#e5e7eb',
+				'black': '#575757'
 			},
+			fontFamily: {
+				title: ['Source Sans Pro', 'sans-serif'],
+			}
 		},
 	},
 	plugins: [],
