@@ -2,10 +2,12 @@ import Paper from './paper';
 import React from 'react';
 import Link from 'next/link';
 import { AiFillGithub, AiFillMediumCircle } from 'react-icons/ai';
-import useTexts from '../hooks/useTexts';
+import textsWithLocales, { Locale } from '../lib/texts-with-locales';
+import { useRouter } from 'next/router';
 
 const NavBar = () => {
-	const texts = useTexts();
+	const { locale } = useRouter();
+	const texts = textsWithLocales(locale as Locale);
 	return (
 		<Paper className={'w-[320px] mr-10'}>
 			<nav>
@@ -27,7 +29,7 @@ const NavBar = () => {
 					].map((item, index) => (
 						<li key={index} className={'mb-0.5 last:mb-0'}>
 							<Link
-								href={`/${item.href}`}
+								href={item.href}
 							>
 								<a className={'block font-title text-xl text-black'}>
 									{item.label}

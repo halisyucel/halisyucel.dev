@@ -3,10 +3,12 @@ import { NextPage } from 'next';
 import Lottie from 'lottie-react';
 import NotFound from '../public/not-found.json';
 import ReturnBack from '../components/return-back';
-import useTexts from '../hooks/useTexts';
+import { useRouter } from 'next/router';
+import textsWithLocales, { Locale } from '../lib/texts-with-locales';
 
 const Error404: NextPage = () => {
-	const texts = useTexts();
+	const { locale } = useRouter();
+	const texts = textsWithLocales(locale as Locale);
 	return (
 		<div className={'w-full h-full flex flex-col justify-center items-center'}>
 			<Lottie

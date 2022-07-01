@@ -53,7 +53,7 @@ const TopBar = () => {
 					onClick={() => setIsDebuggerOpen(true)}
 				/>
 			</div>
-			<div className={`flex justify-center fixed inset-0 w-screen h-screen bg-gray-500/50 z-10 ${isDebuggerOpen ? 'visible' : 'hidden'}`}>
+			<div className={`flex justify-center fixed inset-0 w-screen h-screen bg-black/60 z-10 ${isDebuggerOpen ? 'visible' : 'hidden'}`}>
 				<div className={'h-6 mt-4 px-2 flex border-[0.5px] border-gray-500 bg-amber-100'}>
 					Paused in debugger
 					<span
