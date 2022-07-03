@@ -3,13 +3,13 @@ import sgMail from '@sendgrid/mail';
 import axios from 'axios';
 import { NextApiRequest, NextApiResponse } from 'next';
 
-sgMail.setApiKey(process.env.SECRET_SENDGRID_API_KEY as string);
+sgMail.setApiKey(process.env.SENDGRID_SECRET_KEY as string);
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
 	const { error, value } = ContactFormSchema.validate(req.body);
 	if (error) return res.status(400).json({ message: error.message });
 	const response = await axios({
-		url: `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.SECRET_RECAPTCHA_API_KEY}&response=${value.recaptcha}`,
+		url: `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET_KEY}&response=${value.token}`,
 		method: 'POST',
 	});
 	if (!response.data.success) return res.status(401).json({ message: 'invalid token' });
