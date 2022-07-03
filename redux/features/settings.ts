@@ -21,7 +21,7 @@ export const settingsSlice = createSlice({
 		},
 		toggleLanguage: (state: Draft<SettingsState>) => {
 			state.language = state.language === 'tr' ? 'en' : 'tr';
-		}
+		},
 	},
 });
 
