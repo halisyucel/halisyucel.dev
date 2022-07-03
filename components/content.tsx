@@ -9,9 +9,11 @@ interface ContentProps {
 
 const Content: React.FC<ContentProps> = ({ children }) => {
 	return (
-		<Paper className={'flex-1 relative py-10'}>
+		<Paper className={'flex-1 py-2 h-full'}>
 			<TopBar />
-			{children}
+			<div id={'content'} className={'overflow-auto px-2 h-[calc(100%-5rem)]'}>
+				{children}
+			</div>
 			<BottomBar />
 		</Paper>
 	);
