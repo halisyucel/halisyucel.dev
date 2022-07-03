@@ -5,13 +5,12 @@ interface ReturnBackProps {
 	className?: string;
 }
 
-const ReturnBack: React.FC<ReturnBackProps> = ({ className='' }) => {
+// TODO burayı her linke uyan şekilde yap
+
+const ReturnBack: React.FC<ReturnBackProps> = ({ className = '' }) => {
 	return (
 		<Button size={'xs'} className={className}>
-			<span style={{ fontFamily: 'monospace' }}>
-				<span className={'text-green-600'}>halisyucel@halisyucel</span>
-				<span className={'text-blue-600'}>~</span>$ cd ..
-			</span>
+			<span className={'font-mono'}>cd ..</span>
 		</Button>
 	);
 };
