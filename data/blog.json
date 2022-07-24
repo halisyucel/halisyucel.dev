@@ -1,0 +1,11 @@
+[
+    {
+        "id": 1,
+        "title": "Next.js Veri Alma Fonksiyonları",
+        "date": "2022-06-24",
+        "readingTime": 4,
+        "description": "Next.js’de veri alma fonksiyonlarına girişmeden önce routing yapısı hakkında ufak bir bilgilendirme yapsak fena olmaz. Next.js’de her bir sayfa uygulamanızın pages/ dizininde bulunan .js, .jsx, .ts, .tsx uzantılı dosyalardan export edilen React bileşenleridir. Mesela pages/blog.js konumunda aşağıdaki örnekte olduğu gibi bir dosya oluşturursanız bu bileşene /blog adresinden ulaşabilirsiniz...",
+        "url": "https://medium.com/@halisyucel/next-js-veri-alma-fonksiyonlar%C4%B1-56c138d784",
+        "image": "https://miro.medium.com/max/875/1*YXteETxYyqWN2OW9om6esQ.jpeg"
+    }
+]
