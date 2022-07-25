@@ -69,7 +69,7 @@ const Contact: NextPage = () => {
 			});
 
 			axios
-				.post('/api/mail/', value)
+				.post('/api/sendMail/', value)
 				.then(() => {
 					clearForm();
 					setResultProps({
@@ -145,11 +145,13 @@ const Contact: NextPage = () => {
 							size={'normal'}
 							sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string}
 							onChange={(value) => setToken(value as string)}
+							lang={locale}
 						/>
 					</Label>
 				</div>
 				<div className={'flex mb-4'}>
 					<Button
+						size={'sm'}
 						type={'submit'}
 						appearance={'primary'}
 						className={'mr-4'}
