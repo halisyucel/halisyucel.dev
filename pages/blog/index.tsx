@@ -5,8 +5,8 @@ import Title from '../../components/title';
 import Command from '../../components/command';
 import { BlogData, getBlogData } from '../../lib/blog';
 import Article from '../../components/article';
-import Pagination from '../../components/pagination';
 import { useRouter } from 'next/router';
+import Pagination from '../../components/pagination';
 
 interface BlogProps {
 	data: BlogData[];
@@ -26,7 +26,7 @@ const Blog: NextPage<BlogProps> = ({ data, meta }) => {
 				className={'mt-2'}
 				location={'~/blog'}
 			/>
-			<div>
+			<div className={'mt-4'}>
 				{data.map((article) => (
 					<Article
 						key={article.id}
@@ -41,7 +41,12 @@ const Blog: NextPage<BlogProps> = ({ data, meta }) => {
 				))}
 			</div>
 			<div className={'py-4 mt-2 w-full flex justify-center items-center'}>
-				<Pagination />
+				<Pagination 
+					currentPage={meta.currentPage}
+					pageSize={meta.pageSize}
+					total={meta.total}
+					onChange={(page) => router.push(`/blog/${page}`)}
+				/>
 			</div>
 		</Layout>
 	);

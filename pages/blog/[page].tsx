@@ -1,27 +1,21 @@
 import React from 'react';
 import Blog from './index';
-import { GetStaticProps } from 'next';
+import { GetStaticProps, GetStaticPaths } from 'next';
 import { getBlogData } from '../../lib/blog';
 
-// TODO buralarda bir yerlerde sıkıntılar var
-
-const getStaticPaths = async () => {
+const getStaticPaths: GetStaticPaths = async ({ locales }) => {
 	const { meta } = getBlogData({ page: 1 });
 	const paths = [];
-	for (let i = 1; i <= meta.total; i++) {
-		paths.push({ params: { page: i.toString() } });
-	}
+	const numberOfPages = Math.ceil(meta.total / meta.pageSize);
+	for (let i = 1; i <= numberOfPages; i++)
+		for (const locale of locales as string[])
+			paths.push({ locale, params: { page: i.toString() } });
 	return { paths, fallback: false };
 }
 
 const getStaticProps: GetStaticProps = async ({ params }) => {
-	const { data, meta } = getBlogData({ page: 1 });
-	return {
-		props: {
-			data,
-			meta,
-		},
-	};
+	const { data, meta } = getBlogData({ page: parseInt(params?.page as string) });
+	return { props: { data, meta } };
 }
 
 export default Blog;
