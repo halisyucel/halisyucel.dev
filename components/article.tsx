@@ -8,7 +8,7 @@ const Article: React.FC<BlogData> = ({ title, date, readingTime, description, ur
 	const { locale } = useRouter();
 	const texts = textWithLocales(locale as Locale);
 	return (
-		<article className={'flex w-full h-32 mt-4 first:mt-8'}>
+		<article className={'flex w-full h-32 mb-4 last:mb-0'}>
 			<a
 				href={url}
 				target={'_blank'}

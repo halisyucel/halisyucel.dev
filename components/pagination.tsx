@@ -18,7 +18,7 @@ interface PaginationButtonProps {
 
 const PaginationButton: React.FC<PaginationButtonProps> = ({ type, value, isCurrent, onClick }) => {
     return (
-        <label className={'font-source-sans mr-2 last:mr-0'} onClick={() => onClick(value)}>
+        <label className={'font-source-sans mr-2 last:mr-0'} onClick={() => !isCurrent && onClick(value)}>
             {type === 'page' && (
                 <Button size={'sm'} appearance={isCurrent ? 'primary' : 'default'}>
                     <span className={'font-extrabold h-[30px]'}>{value}</span>
@@ -108,15 +108,15 @@ const Pagination: React.FC<PaginationProps> = ({ currentPage, pageSize, total, o
                             </React.Fragment>
                         )
                     )}
-                    {currentPage < (numberOfPages - 3) && (
+                    {currentPage < (numberOfPages - 2) && (
                         <PaginationButton
                             type={'next'}
-                            value={currentPage + 3}
+                            value={(currentPage < 3) ? 6 : (currentPage + 3)}
                             isCurrent={false}
                             onClick={(value) => onChange(value)}
                         />
                     )}
-                    {currentPage < (numberOfPages - 2) && (
+                    {currentPage < (numberOfPages - 3) && (
                         <PaginationButton
                             type={'next-last'}
                             value={numberOfPages}
