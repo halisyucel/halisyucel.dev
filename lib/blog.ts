@@ -36,7 +36,6 @@ getBlogData = ({ page }) => {
 		pageSize: 10,
 		total: JSON.parse(fileData).length,
 	};
-	console.log(data);
 	
 	return { data, meta };
 };
