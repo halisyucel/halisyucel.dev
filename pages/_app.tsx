@@ -11,6 +11,7 @@ import 'rsuite/dist/rsuite.min.css';
 function MyApp({ Component, pageProps }: AppProps) {
 	const router = useRouter();
 	useEffect(() => {
+		if (router.pathname === '/404') return;
 		let fileName = `${routesToNames[router.pathname]}${
 			router.query.hasOwnProperty('page') ? `/${router.query.page}` : ''
 		}.tsx`;

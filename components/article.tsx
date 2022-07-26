@@ -1,9 +1,9 @@
 import { BlogData } from '../lib/blog';
 import textWithLocales, { Locale } from '../lib/texts-with-locales';
 import moment from 'moment';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React from 'react';
-import Image from 'next/image';
 
 const Article: React.FC<BlogData> = ({ title, date, readingTime, description, url, image }) => {
 	const { locale } = useRouter();
@@ -17,14 +17,7 @@ const Article: React.FC<BlogData> = ({ title, date, readingTime, description, ur
 				className={'text-black hover:text-black'}
 			>
 				<figure className={'w-48 h-full mr-4 rounded-2xl overflow-hidden'}>
-					<Image
-						src={image}
-						alt={title}
-						width={'100%'}
-						height={'100%'}
-						layout={'fill'}
-						className={'object-cover'}
-					/>
+					<img className={'w-full'} src={image} alt={title} />
 				</figure>
 			</a>
 			<div className={'flex-1 h-full flex flex-col'}>
