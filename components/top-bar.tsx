@@ -1,9 +1,13 @@
+import { RootState } from '../redux/store';
+import HistoryTab from './history-tab';
 import confetti from 'canvas-confetti';
 import React, { useCallback, useState } from 'react';
 import { FaPlay, FaBug } from 'react-icons/fa';
+import { useSelector } from 'react-redux';
 import { IconButton } from 'rsuite';
 
 const TopBar = () => {
+	const { tabs } = useSelector((state: RootState) => state.history);
 	const [isDebuggerOpen, setIsDebuggerOpen] = useState<boolean>(false);
 	const [isConfettiActive, setIsConfettiActive] = useState<boolean>(false);
 	const confettiShow = useCallback(() => {
@@ -50,7 +54,16 @@ const TopBar = () => {
 					'flex justify-center items-center bg-bg-secondary w-full h-10 border-b-2 border-gray'
 				}
 			>
-				<span className={'flex-1'} />
+				<div className={'flex flex-1 overflow-visible'}>
+					{tabs.map((tab, index) => (
+						<HistoryTab
+							key={index}
+							name={tab.name}
+							path={tab.path}
+							isOpen={tab.isOpen}
+						/>
+					))}
+				</div>
 				<IconButton
 					size={'xs'}
 					className={'mr-[10px]'}

@@ -17,6 +17,9 @@ module.exports = {
 			fontFamily: {
 				'source-sans': ['Source Sans Pro', 'sans-serif'],
 			},
+			boxShadow: {
+				tab: '0 0 0 4px rgb(191, 219, 254)',
+			},
 		},
 	},
 	plugins: [],

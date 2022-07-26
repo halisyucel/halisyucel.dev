@@ -1,9 +1,11 @@
+import HistoryReducer from './features/history';
 import SettingsReducer from './features/settings';
 import { configureStore } from '@reduxjs/toolkit';
 
 export const store = configureStore({
 	reducer: {
 		settings: SettingsReducer,
+		history: HistoryReducer,
 	},
 });
 
