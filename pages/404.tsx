@@ -1,5 +1,5 @@
 import ReturnBack from '../components/return-back';
-import textsWithLocales, { Locale } from '../lib/texts-with-locales';
+import textsWithLocales, { Locale } from '../utils/texts-with-locales';
 import NotFound from '../public/not-found.json';
 import Lottie from 'lottie-react';
 import { NextPage } from 'next';

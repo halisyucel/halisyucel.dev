@@ -3,7 +3,7 @@ import Command from '../../components/command';
 import Layout from '../../components/layout';
 import Pagination from '../../components/pagination';
 import Title from '../../components/title';
-import { BlogData, getBlogData } from '../../lib/blog';
+import { BlogData, getBlogData } from '../../utils/blog';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import React from 'react';

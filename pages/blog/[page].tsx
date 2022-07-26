@@ -1,4 +1,4 @@
-import { getBlogData } from '../../lib/blog';
+import { getBlogData } from '../../utils/blog';
 import Blog from './index';
 import { GetStaticProps, GetStaticPaths } from 'next';
 import React from 'react';

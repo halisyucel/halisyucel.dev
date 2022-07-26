@@ -1,5 +1,5 @@
-import { BlogData } from '../lib/blog';
-import textWithLocales, { Locale } from '../lib/texts-with-locales';
+import { BlogData } from '../utils/blog';
+import textWithLocales, { Locale } from '../utils/texts-with-locales';
 import moment from 'moment';
 import Image from 'next/image';
 import { useRouter } from 'next/router';

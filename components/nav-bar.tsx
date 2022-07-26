@@ -1,4 +1,4 @@
-import textsWithLocales, { Locale } from '../lib/texts-with-locales';
+import textsWithLocales, { Locale } from '../utils/texts-with-locales';
 import Paper from './paper';
 import Link from 'next/link';
 import { useRouter } from 'next/router';

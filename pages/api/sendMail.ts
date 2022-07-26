@@ -1,4 +1,4 @@
-import { ContactFormSchema } from '../../lib/contact';
+import { ContactFormSchema } from '../../utils/contact';
 import sgMail from '@sendgrid/mail';
 import axios from 'axios';
 import { NextApiRequest, NextApiResponse } from 'next';
