@@ -1,12 +1,12 @@
-import Layout from '../../components/layout';
-import { NextPage } from 'next';
-import React from 'react';
-import Title from '../../components/title';
-import Command from '../../components/command';
-import { BlogData, getBlogData } from '../../lib/blog';
 import Article from '../../components/article';
-import { useRouter } from 'next/router';
+import Command from '../../components/command';
+import Layout from '../../components/layout';
 import Pagination from '../../components/pagination';
+import Title from '../../components/title';
+import { BlogData, getBlogData } from '../../lib/blog';
+import { NextPage } from 'next';
+import { useRouter } from 'next/router';
+import React from 'react';
 
 interface BlogProps {
 	data: BlogData[];
@@ -14,7 +14,7 @@ interface BlogProps {
 		currentPage: number;
 		pageSize: number;
 		total: number;
-	}
+	};
 }
 
 const Blog: NextPage<BlogProps> = ({ data, meta }) => {
@@ -22,10 +22,7 @@ const Blog: NextPage<BlogProps> = ({ data, meta }) => {
 	return (
 		<Layout>
 			<Title value={'blog'} />
-			<Command
-				className={'mt-2'}
-				location={'~/blog'}
-			/>
+			<Command className={'mt-2'} location={'~/blog'} />
 			<div className={'mt-4'}>
 				{data.map((article) => (
 					<Article
@@ -41,7 +38,7 @@ const Blog: NextPage<BlogProps> = ({ data, meta }) => {
 				))}
 			</div>
 			<div className={'py-4 mt-2 w-full flex justify-center items-center'}>
-				<Pagination 
+				<Pagination
 					currentPage={meta.currentPage}
 					pageSize={meta.pageSize}
 					total={meta.total}
@@ -55,7 +52,7 @@ const Blog: NextPage<BlogProps> = ({ data, meta }) => {
 const getStaticProps = async () => {
 	const { data, meta } = getBlogData({ page: 1 });
 	return { props: { data, meta } };
-}
+};
 
 export default Blog;
 export { getStaticProps };

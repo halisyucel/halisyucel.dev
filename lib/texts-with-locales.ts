@@ -51,8 +51,8 @@ const textWithLocales: (locale: Locale) => { [key: string]: any } = (locale) =>
 				blog: {
 					article: {
 						minRead: 'dakika okuma süresi',
-					}
-				}
+					},
+				},
 			},
 			recaptcha: {
 				failed: 'reCAPTCHA doğrulaması başarısız oldu',
@@ -107,8 +107,8 @@ const textWithLocales: (locale: Locale) => { [key: string]: any } = (locale) =>
 				blog: {
 					article: {
 						minRead: 'min read',
-					}
-				}
+					},
+				},
 			},
 			recaptcha: {
 				failed: 'reCAPTCHA validation failed',

@@ -1,10 +1,10 @@
+import { BlogData } from '../lib/blog';
+import textWithLocales, { Locale } from '../lib/texts-with-locales';
 import moment from 'moment';
 import { useRouter } from 'next/router';
 import React from 'react';
-import { BlogData } from '../lib/blog';
-import textWithLocales, { Locale } from '../lib/texts-with-locales';
 
-const Article: React.FC<BlogData> = ({ title, date, readingTime, description, url, image}) => {
+const Article: React.FC<BlogData> = ({ title, date, readingTime, description, url, image }) => {
 	const { locale } = useRouter();
 	const texts = textWithLocales(locale as Locale);
 	return (
@@ -16,11 +16,7 @@ const Article: React.FC<BlogData> = ({ title, date, readingTime, description, ur
 				className={'text-black hover:text-black'}
 			>
 				<figure className={'w-48 h-full mr-4 rounded-2xl overflow-hidden'}>
-					<img
-						className={'w-full'}
-						src={image}
-						alt={title}
-					/>
+					<img className={'w-full'} src={image} alt={title} />
 				</figure>
 			</a>
 			<div className={'flex-1 h-full flex flex-col'}>
@@ -32,7 +28,11 @@ const Article: React.FC<BlogData> = ({ title, date, readingTime, description, ur
 				>
 					<h2 className={'text-3xl font-source-sans font-extrabold'}>{title}</h2>
 				</a>
-				<p className={'flex-1 overflow-hidden font-source-sans font-normal text-sm pl-2 border-l-[1px]'}>
+				<p
+					className={
+						'flex-1 overflow-hidden font-source-sans font-normal text-sm pl-2 border-l-[1px]'
+					}
+				>
 					{description}
 				</p>
 				<div className={'text-xs font-light py-1'}>

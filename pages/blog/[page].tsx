@@ -1,7 +1,7 @@
-import React from 'react';
+import { getBlogData } from '../../lib/blog';
 import Blog from './index';
 import { GetStaticProps, GetStaticPaths } from 'next';
-import { getBlogData } from '../../lib/blog';
+import React from 'react';
 
 const getStaticPaths: GetStaticPaths = async ({ locales }) => {
 	const { meta } = getBlogData({ page: 1 });
@@ -11,12 +11,12 @@ const getStaticPaths: GetStaticPaths = async ({ locales }) => {
 		for (const locale of locales as string[])
 			paths.push({ locale, params: { page: i.toString() } });
 	return { paths, fallback: false };
-}
+};
 
 const getStaticProps: GetStaticProps = async ({ params }) => {
 	const { data, meta } = getBlogData({ page: parseInt(params?.page as string) });
 	return { props: { data, meta } };
-}
+};
 
 export default Blog;
 export { getStaticPaths, getStaticProps };
