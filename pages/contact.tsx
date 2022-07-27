@@ -4,7 +4,7 @@ import Layout from '../components/layout';
 import MailBox from '../components/mail-box';
 import Title from '../components/title';
 import { createErrorText, ContactFormSchema } from '../utils/contact';
-import textsWithLocales, { Locale } from '../utils/texts-with-locales';
+import texts, { Locale } from '../utils/texts';
 import axios from 'axios';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
@@ -21,7 +21,7 @@ interface ResultProps {
 
 const Contact: NextPage = () => {
 	const { locale } = useRouter();
-	const texts = textsWithLocales(locale as Locale);
+	const t = texts(locale as Locale);
 	const recaptchaRef = useRef<ReCAPTCHA>(null);
 	const [errors, setErrors] = useState<any[]>([]);
 	const [isLoading, setIsLoading] = useState<boolean>(false);
@@ -74,14 +74,14 @@ const Contact: NextPage = () => {
 					clearForm();
 					setResultProps({
 						type: 'success',
-						message: texts.pages.contact.result.success,
+						message: t.pages.contact.result.success,
 						isVisible: true,
 					});
 				})
 				.catch(() => {
 					setResultProps({
 						type: 'error',
-						message: texts.pages.contact.result.error,
+						message: t.pages.contact.result.error,
 						isVisible: true,
 					});
 				})
@@ -100,16 +100,16 @@ const Contact: NextPage = () => {
 	);
 	return (
 		<Layout>
-			<Title value={texts.pages.contact.title} />
+			<Title value={t.pages.contact.title} />
 			<Command className={'mt-2'} location={'~/contact'} />
 			<p className={'text-lg font-source-sans pb-4 mb-4 font-light border-b-2 border-gray'}>
-				{texts.pages.contact.text.part_1}
+				{t.pages.contact.text.part_1}
 				<MailBox value={process.env.NEXT_PUBLIC_EMAIL as string} />
-				{texts.pages.contact.text.part_2}
+				{t.pages.contact.text.part_2}
 			</p>
 			<form className={'w-[min(100%,400px)]'} onSubmit={handleSubmit}>
 				<div className={'mb-4'}>
-					<Label value={texts.pages.contact.labels.name} error={nameError}>
+					<Label value={t.pages.contact.labels.name} error={nameError}>
 						<Input
 							name={'name'}
 							spellCheck={false}
@@ -119,7 +119,7 @@ const Contact: NextPage = () => {
 							onChange={(value) => setName(value)}
 						/>
 					</Label>
-					<Label value={texts.pages.contact.labels.email} error={emailError}>
+					<Label value={t.pages.contact.labels.email} error={emailError}>
 						<Input
 							name={'email'}
 							spellCheck={false}
@@ -128,7 +128,7 @@ const Contact: NextPage = () => {
 							onChange={(value) => setEmail(value)}
 						/>
 					</Label>
-					<Label value={texts.pages.contact.labels.message} error={messageError}>
+					<Label value={t.pages.contact.labels.message} error={messageError}>
 						<Input
 							as={'textarea'}
 							name={'message'}
@@ -157,7 +157,7 @@ const Contact: NextPage = () => {
 						className={'mr-4'}
 						loading={isLoading}
 					>
-						{texts.pages.contact.labels.send}
+						{t.pages.contact.labels.send}
 					</Button>
 				</div>
 				{resultProps.isVisible && (

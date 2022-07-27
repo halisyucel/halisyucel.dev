@@ -15,6 +15,6 @@ export const createErrorText: (
 	texts: { [key: string]: any },
 ) => string | false = (name, errors, texts) => {
 	const error = errors.find((error) => error.context.key === name);
-	if (error) return texts.pages.contact.errors?.[name]?.[error.type] || error.message;
+	if (error) return t.pages.contact.errors?.[name]?.[error.type] || error.message;
 	return false;
 };

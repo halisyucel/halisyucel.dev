@@ -1,13 +1,12 @@
 import { BlogData } from '../utils/blog';
-import textWithLocales, { Locale } from '../utils/texts-with-locales';
+import texts, { Locale } from '../utils/texts';
 import moment from 'moment';
-import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React from 'react';
 
 const Article: React.FC<BlogData> = ({ title, date, readingTime, description, url, image }) => {
 	const { locale } = useRouter();
-	const texts = textWithLocales(locale as Locale);
+	const t = texts(locale as Locale);
 	return (
 		<article className={'flex w-full h-32 mb-4 last:mb-0'}>
 			<a
@@ -39,7 +38,7 @@ const Article: React.FC<BlogData> = ({ title, date, readingTime, description, ur
 				<div className={'text-xs font-light py-1'}>
 					{moment(date).format('MMM Do, YYYY')}
 					&nbsp;&#8226;&nbsp;
-					{readingTime} {texts.pages.blog.article.minRead}
+					{readingTime} {t.pages.blog.article.minRead}
 				</div>
 			</div>
 		</article>

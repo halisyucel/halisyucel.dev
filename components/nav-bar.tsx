@@ -1,4 +1,4 @@
-import textsWithLocales, { Locale } from '../utils/texts-with-locales';
+import texts, { Locale } from '../utils/texts';
 import Paper from './paper';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -7,7 +7,7 @@ import { AiFillGithub, AiFillMediumCircle } from 'react-icons/ai';
 
 const NavBar = () => {
 	const { locale } = useRouter();
-	const texts = textsWithLocales(locale as Locale);
+	const t = texts(locale as Locale);
 	return (
 		<Paper className={'w-[320px] mr-10'}>
 			<nav>
@@ -33,11 +33,11 @@ const NavBar = () => {
 				</p>
 				<ul className={'ml-0.5 border-b-2 pb-2 mb-2 border-gray'}>
 					{[
-						{ label: texts.navigation.home, href: '/' },
-						{ label: texts.navigation.about, href: '/about' },
-						{ label: texts.navigation.blog, href: '/blog' },
-						{ label: texts.navigation.projects, href: '/projects' },
-						{ label: texts.navigation.contact, href: '/contact' },
+						{ label: t.navigation.home, href: '/' },
+						{ label: t.navigation.about, href: '/about' },
+						{ label: t.navigation.blog, href: '/blog' },
+						{ label: t.navigation.projects, href: '/projects' },
+						{ label: t.navigation.contact, href: '/contact' },
 					].map((item, index) => (
 						<li key={index} className={'mb-0.5 last:mb-0'}>
 							<Link href={item.href}>

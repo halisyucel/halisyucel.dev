@@ -1,6 +1,6 @@
 type Locale = 'tr' | 'en';
 
-const textWithLocales: (locale: Locale) => { [key: string]: any } = (locale) =>
+const texts: (locale: Locale) => { [key: string]: any } = (locale) =>
 	({
 		tr: {
 			navigation: {
@@ -52,6 +52,9 @@ const textWithLocales: (locale: Locale) => { [key: string]: any } = (locale) =>
 					article: {
 						minRead: 'dakika okuma süresi',
 					},
+				},
+				projects: {
+					title: 'projelerim',
 				},
 			},
 			recaptcha: {
@@ -109,6 +112,9 @@ const textWithLocales: (locale: Locale) => { [key: string]: any } = (locale) =>
 						minRead: 'min read',
 					},
 				},
+				projects: {
+					title: 'my projects',
+				},
 			},
 			recaptcha: {
 				failed: 'reCAPTCHA validation failed',
@@ -117,4 +123,4 @@ const textWithLocales: (locale: Locale) => { [key: string]: any } = (locale) =>
 	}[locale]);
 
 export type { Locale };
-export default textWithLocales;
+export default texts;
