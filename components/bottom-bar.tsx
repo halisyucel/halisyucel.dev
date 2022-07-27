@@ -1,8 +1,8 @@
 import ReturnBack from './return-back';
+import ToggleLang from './toggle-lang';
 import React, { useState, useEffect } from 'react';
 import { BiGitBranch } from 'react-icons/bi';
 import { Tag } from 'rsuite';
-import ToggleLang from './toggle-lang';
 
 const BottomBar = () => {
 	const [positions, setPositions] = useState<number[]>([0, 0]);

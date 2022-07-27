@@ -29,10 +29,10 @@ const Contact: NextPage = () => {
 	const [email, setEmail] = useState<string>('');
 	const [message, setMessage] = useState<string>('');
 	const [token, setToken] = useState<string>('');
-	const nameError = useMemo(() => createErrorText('name', errors, texts), [errors, texts]);
-	const emailError = useMemo(() => createErrorText('email', errors, texts), [errors, texts]);
-	const messageError = useMemo(() => createErrorText('message', errors, texts), [errors, texts]);
-	const tokenError = useMemo(() => createErrorText('token', errors, texts), [errors, texts]);
+	const nameError = useMemo(() => createErrorText('name', errors, t), [errors, t]);
+	const emailError = useMemo(() => createErrorText('email', errors, t), [errors, t]);
+	const messageError = useMemo(() => createErrorText('message', errors, t), [errors, t]);
+	const tokenError = useMemo(() => createErrorText('token', errors, t), [errors, t]);
 	const [resultProps, setResultProps] = useState<ResultProps>({
 		type: undefined,
 		message: undefined,
@@ -96,7 +96,7 @@ const Contact: NextPage = () => {
 					}, 100);
 				});
 		},
-		[name, email, message, token, texts, clearForm],
+		[name, email, message, token, t, clearForm],
 	);
 	return (
 		<Layout>

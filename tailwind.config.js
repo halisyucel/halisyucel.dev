@@ -13,6 +13,7 @@ module.exports = {
 				'bg-secondary': '#f0f0f2',
 				gray: '#e5e7eb',
 				black: '#575757',
+				'real-black': '#000000',
 			},
 			fontFamily: {
 				'source-sans': ['Source Sans Pro', 'sans-serif'],
