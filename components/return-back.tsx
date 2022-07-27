@@ -7,6 +7,8 @@ interface ReturnBackProps {
 	className?: string;
 }
 
+// TODO eğer zaten home da ise shake yapacak
+
 const ReturnBack: React.FC<ReturnBackProps> = ({ className = '' }) => {
 	const router = useRouter();
 	const [back, setBack] = useState<string | null>(null);

@@ -1,0 +1,71 @@
+[
+	{
+		"id": 1,
+		"title": "tibbiyelidergi.com",
+		"subtitle": {
+			"en": "a full-stack web application",
+			"tr": "full-stack web uygulaması"
+		},
+		"description": {
+			"en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+			"tr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+		},
+		"lang": "JavaScript",
+		"demo": "https://tibbiyelidergi.com",
+		"github": null,
+		"isFinished": true,
+		"hasPWASupport": true,
+		"technologies": [
+			"react",
+			"redux",
+			"next.js",
+			"react-query",
+			"rsuite",
+			"axios",
+			"joi",
+			"scss",
+			"|",
+			"strapi",
+			"sendgrid",
+			"mysql",
+			"slugify",
+			"jsonwebtokens",
+			"|",
+			"prettier",
+			"eslint"
+		]
+	},
+	{
+		"id": 2,
+		"title": "halisyucel.me",
+		"subtitle": {
+			"en": "a personal website",
+			"tr": "kişisel web sitesi"
+		},
+		"description": {
+			"en": "a personal website",
+			"tr": "alışılmışın dışında bir tasarımı var editor gibi"
+		},
+		"lang": "TypeScript",
+		"demo": "https://halisyucel.me",
+		"github": "https://github.com/halisyucel/halisyucel.me",
+		"isFinished": true,
+		"hasPWASupport": false,
+		"technologies": [
+			"react",
+			"redux",
+			"next.js",
+			"rsuite",
+			"i18n",
+			"axios",
+			"joi",
+			"tailwindcss",
+			"scss",
+			"|",
+			"sendgrid",
+			"|",
+			"prettier",
+			"eslint"
+		]
+	}
+]
