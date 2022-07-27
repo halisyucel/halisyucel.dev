@@ -1,8 +1,8 @@
 import ReturnBack from './return-back';
-import ToggleThemeButton from './toggle-theme-button';
 import React, { useState, useEffect } from 'react';
 import { BiGitBranch } from 'react-icons/bi';
 import { Tag } from 'rsuite';
+import ToggleLang from './toggle-lang';
 
 const BottomBar = () => {
 	const [positions, setPositions] = useState<number[]>([0, 0]);
@@ -22,7 +22,7 @@ const BottomBar = () => {
 			}
 		>
 			<ReturnBack className={'mr-[10px]'} />
-			<ToggleThemeButton />
+			<ToggleLang />
 			<span className={'flex-1'} />
 			<Tag>
 				{positions[0]}:{positions[1]}
