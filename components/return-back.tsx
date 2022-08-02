@@ -1,28 +1,40 @@
-import { routesToNames } from '../utils/helper';
+import { routesToBack } from '../utils/helper';
 import { useRouter } from 'next/router';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Button } from 'rsuite';
 
 interface ReturnBackProps {
 	className?: string;
 }
 
-// TODO eğer zaten home da ise shake yapacak
-
 const ReturnBack: React.FC<ReturnBackProps> = ({ className = '' }) => {
 	const router = useRouter();
 	const [back, setBack] = useState<string | null>(null);
+	const [isShake, setIsShake] = useState<boolean>(false);
+	const handleClick = useCallback(() => {
+		if (back) {
+			console.log('back', back);
+			router.push(back);
+		} else {
+			setIsShake(true);
+			const timeout = setTimeout(() => {
+				setIsShake(false);
+			}, 1000);
+			return () => clearTimeout(timeout);
+		}
+	}, [router, back]);
 	useEffect(() => {
-		if (routesToNames.hasOwnProperty(router.pathname))
-			if (router.pathname === '/blog/[page]') setBack('/blog');
-		if (router.pathname === 'projects/[page]') setBack('/projects');
-		else setBack('/');
+		if (routesToBack.hasOwnProperty(router.pathname)) {
+			setBack(routesToBack[router.pathname]);
+			return;
+		}
+		setBack(null);
 	}, [router]);
 	return (
 		<Button
 			size={'xs'}
-			className={className}
-			onClick={() => (back ? router.push(back) : router.push('/'))}
+			className={`${className} ${isShake ? 'animate__animated animate__headShake' : ''}`}
+			onClick={() => handleClick()}
 		>
 			<span className={'font-mono'}>cd ..</span>
 		</Button>

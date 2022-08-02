@@ -7,6 +7,7 @@ import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 import { Provider } from 'react-redux';
 import 'rsuite/dist/rsuite.min.css';
+import 'animate.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
 	const router = useRouter();

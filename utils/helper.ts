@@ -7,3 +7,13 @@ export const routesToNames: { [key: string]: string } = {
 	'/projects/[page]': 'Projects',
 	'/contact': 'Contact',
 };
+
+export const routesToBack: { [key: string]: string | null } = {
+	'/': null,
+	'/about': '/',
+	'/blog': '/',
+	'/blog/[page]': '/blog',
+	'/projects': '/',
+	'/projects/[page]': '/projects',
+	'/contact': '/',
+};
