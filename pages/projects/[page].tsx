@@ -1,9 +1,9 @@
-import { getBlogData } from '../../utils/blog';
-import Blog from './index';
+import { getProjectsData } from '../../utils/projects';
+import Projects from './index';
 import { GetStaticProps, GetStaticPaths } from 'next';
 
 const getStaticPaths: GetStaticPaths = async ({ locales }) => {
-	const { meta } = getBlogData({ page: 1 });
+	const { meta } = getProjectsData({ page: 1 });
 	const paths = [];
 	const numberOfPages = Math.ceil(meta.total / meta.pageSize);
 	for (let i = 1; i <= numberOfPages; i++)
@@ -13,9 +13,9 @@ const getStaticPaths: GetStaticPaths = async ({ locales }) => {
 };
 
 const getStaticProps: GetStaticProps = async ({ params }) => {
-	const { data, meta } = getBlogData({ page: parseInt(params?.page as string) });
+	const { data, meta } = getProjectsData({ page: parseInt(params?.page as string) });
 	return { props: { data, meta } };
 };
 
-export default Blog;
+export default Projects;
 export { getStaticPaths, getStaticProps };

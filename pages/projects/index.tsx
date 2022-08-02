@@ -18,6 +18,8 @@ interface ProjectsProps {
 		total: number;
 	};
 }
+	
+// TODO projelere responsive olduklarını da ekle
 
 const Projects: NextPage<ProjectsProps> = ({ data, meta }) => {
 	const router = useRouter();
