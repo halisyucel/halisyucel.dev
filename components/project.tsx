@@ -1,5 +1,5 @@
 import { ProjectData } from '../utils/projects';
-import { Locale } from '../utils/texts';
+import texts, { Locale } from '../utils/texts';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { FaSass } from 'react-icons/fa';
@@ -56,6 +56,8 @@ const getIconsForProject = (iconName: string) => {
 	}
 };
 
+// TODO is finished eklenecek
+
 const Project: React.FC<ProjectData> = ({
 	id,
 	title,
@@ -68,7 +70,8 @@ const Project: React.FC<ProjectData> = ({
 	hasPWASupport,
 	technologies,
 }) => {
-	const { locale } = useRouter();
+	const router = useRouter();
+	const t = texts(router.locale as Locale);
 	return (
 		<div className={'mb-4'}>
 			<div className={'flex justify-start items-end'}>
@@ -100,12 +103,20 @@ const Project: React.FC<ProjectData> = ({
 				<span className={'flex-1'} />
 				<span className={'flex font-source-sans font-normal text-sm'}>
 					<span className={'text-lg mr-2'}>{getIconsForProject(lang.toLowerCase())}</span>
-					<b>{lang}</b>&nbsp; ile yazıldı
+					{router.locale === 'tr' ? (
+						<React.Fragment>
+							<b>{lang}</b>&nbsp;{t.pages.projects.project.writtenWith}
+						</React.Fragment>
+					) : (
+						<React.Fragment>
+							{t.pages.projects.project.writtenWith}&nbsp;<b>{lang}</b>
+						</React.Fragment>
+					)}
 				</span>
 			</div>
 			<h3 className={'font-source-sans font-normal text-sm'}>{subtitle.en}</h3>
 			<div className={'font-source-sans font-normal text-sm mt-1.5 border-l-[1px] pl-2'}>
-				{description[locale as Locale]}
+				{description[router.locale as Locale]}
 			</div>
 			<div className={'flex mt-2 justify-start items-center flex-wrap'}>
 				{demo && (

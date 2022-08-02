@@ -55,7 +55,13 @@ const texts: (locale: Locale) => { [key: string]: any } = (locale) =>
 				},
 				projects: {
 					title: 'projelerim',
+					project: {
+						writtenWith: 'ile yazıldı'
+					}
 				},
+				about: {
+					title: 'hakkımda',
+				}
 			},
 			recaptcha: {
 				failed: 'reCAPTCHA doğrulaması başarısız oldu',
@@ -114,7 +120,13 @@ const texts: (locale: Locale) => { [key: string]: any } = (locale) =>
 				},
 				projects: {
 					title: 'my projects',
+					project: {
+						writtenWith: 'Written with'
+					}
 				},
+				about: {
+					title: 'about me',
+				}
 			},
 			recaptcha: {
 				failed: 'reCAPTCHA validation failed',
