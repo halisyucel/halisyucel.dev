@@ -11,6 +11,9 @@ const texts: (locale: Locale) => { [key: string]: any } = (locale) =>
 				contact: 'iletişim',
 			},
 			pages: {
+				home: {
+					title: 'ana sayfa',
+				},
 				notFound: 'aradığınız sayfa bulunamadı',
 				contact: {
 					title: 'benimle iletişime geçin',
@@ -77,6 +80,9 @@ const texts: (locale: Locale) => { [key: string]: any } = (locale) =>
 			},
 			pages: {
 				notFound: 'page not found',
+				home: {
+					title: 'home',
+				},
 				contact: {
 					title: 'contact me',
 					text: {
