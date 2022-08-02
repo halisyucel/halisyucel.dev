@@ -4,6 +4,8 @@ import React, { useState, useEffect } from 'react';
 import { BiGitBranch } from 'react-icons/bi';
 import { Tag } from 'rsuite';
 
+// TODO sitemap ekle
+
 const BottomBar = () => {
 	const [positions, setPositions] = useState<number[]>([0, 0]);
 	useEffect(() => {
