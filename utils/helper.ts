@@ -1,6 +1,5 @@
 export const routesToNames: { [key: string]: string } = {
-	'/': 'Home',
-	'/about': 'About',
+	'/': 'About',
 	'/blog': 'Blog',
 	'/blog/[page]': 'Blog',
 	'/projects': 'Projects',
@@ -10,7 +9,6 @@ export const routesToNames: { [key: string]: string } = {
 
 export const routesToBack: { [key: string]: string | null } = {
 	'/': null,
-	'/about': '/',
 	'/blog': '/',
 	'/blog/[page]': '/blog',
 	'/projects': '/',

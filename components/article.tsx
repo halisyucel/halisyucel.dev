@@ -16,7 +16,7 @@ const Article: React.FC<BlogData> = ({ title, date, readingTime, description, ur
 				className={'text-black hover:text-black'}
 			>
 				<figure className={'w-48 h-full mr-4 rounded-2xl overflow-hidden'}>
-					<img className={'w-full'} src={image} alt={title} />
+					<img className={'h-full'} src={image} alt={title} />
 				</figure>
 			</a>
 			<div className={'flex-1 h-full flex flex-col'}>

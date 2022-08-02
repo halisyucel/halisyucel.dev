@@ -18,11 +18,6 @@ const getServerSideProps: GetServerSideProps = async ({ res }) => {
             priority: 1,
         },
         {
-            url: '/about',
-            changefreq: 'monthly',
-            priority: 0.9,
-        },
-        {
             url: '/projects',
             changefreq: 'monthly',
             priority: 0.9,

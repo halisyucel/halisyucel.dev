@@ -4,16 +4,12 @@ const texts: (locale: Locale) => { [key: string]: any } = (locale) =>
 	({
 		tr: {
 			navigation: {
-				home: 'ana sayfa',
 				about: 'hakkımda',
 				blog: 'blog',
 				projects: 'projeler',
 				contact: 'iletişim',
 			},
 			pages: {
-				home: {
-					title: 'ana sayfa',
-				},
 				notFound: 'aradığınız sayfa bulunamadı',
 				contact: {
 					title: 'benimle iletişime geçin',
@@ -72,7 +68,6 @@ const texts: (locale: Locale) => { [key: string]: any } = (locale) =>
 		},
 		en: {
 			navigation: {
-				home: 'home',
 				about: 'about',
 				blog: 'blog',
 				projects: 'projects',
@@ -80,9 +75,6 @@ const texts: (locale: Locale) => { [key: string]: any } = (locale) =>
 			},
 			pages: {
 				notFound: 'page not found',
-				home: {
-					title: 'home',
-				},
 				contact: {
 					title: 'contact me',
 					text: {

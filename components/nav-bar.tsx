@@ -33,8 +33,7 @@ const NavBar = () => {
 				</p>
 				<ul className={'ml-0.5 border-b-2 pb-2 mb-2 border-gray'}>
 					{[
-						{ label: t.navigation.home, href: '/' },
-						{ label: t.navigation.about, href: '/about' },
+						{ label: t.navigation.about, href: '/' },
 						{ label: t.navigation.blog, href: '/blog' },
 						{ label: t.navigation.projects, href: '/projects' },
 						{ label: t.navigation.contact, href: '/contact' },
