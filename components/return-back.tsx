@@ -7,8 +7,6 @@ interface ReturnBackProps {
 	className?: string;
 }
 
-// TODO 404 sayfasında hata veriyor
-
 const ReturnBack: React.FC<ReturnBackProps> = ({ className = '' }) => {
 	const router = useRouter();
 	const [back, setBack] = useState<string | null>(null);
