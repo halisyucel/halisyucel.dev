@@ -37,7 +37,7 @@
 	},
 	{
 		"id": 2,
-		"title": "halisyucel.me",
+		"title": "halisyucel.dev",
 		"subtitle": {
 			"en": "a personal website",
 			"tr": "kişisel web sitesi"
@@ -47,8 +47,8 @@
 			"tr": "Şu an içinde bulunduğunuz sitenin kendisidir. Next.js ile yapılmış olup çoklu dil desteğine sahiptir. TailwindCSS kullanarak sitillendirilmiştir. Tasarım olarak alışılmışın dışında bir görüntüsü vardır. Bir kod editörüne benzetilmeye çalışılmıştır."
 		},
 		"lang": "TypeScript",
-		"demo": "https://halisyucel.me",
-		"github": "https://github.com/halisyucel/halisyucel.me",
+		"demo": "https://halisyucel.dev",
+		"github": "https://github.com/halisyucel/halisyucel.dev",
 		"hasPWASupport": false,
 		"technologies": [
 			"react",
