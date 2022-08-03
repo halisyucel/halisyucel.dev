@@ -13,6 +13,7 @@ const texts: (locale: Locale) => { [key: string]: any } = (locale) =>
 				notFound: 'aradığınız sayfa bulunamadı',
 				contact: {
 					title: 'benimle iletişime geçin',
+					headTitle: 'iletişim',
 					text: {
 						part_1: 'bana ulaşmak isterseniz',
 						part_2: 'adresini kullanabilir veya aşağıdaki formu doldurabilirsiniz',
@@ -48,11 +49,13 @@ const texts: (locale: Locale) => { [key: string]: any } = (locale) =>
 					},
 				},
 				blog: {
+					headTitle: 'blog',
 					article: {
 						minRead: 'dakika okuma süresi',
 					},
 				},
 				projects: {
+					headTitle: 'projeler',
 					title: 'projelerim',
 					project: {
 						writtenWith: 'ile yazıldı'
@@ -60,6 +63,7 @@ const texts: (locale: Locale) => { [key: string]: any } = (locale) =>
 				},
 				about: {
 					title: 'hakkımda',
+					headTitle: 'hakkımda',
 				}
 			},
 			recaptcha: {
@@ -77,6 +81,7 @@ const texts: (locale: Locale) => { [key: string]: any } = (locale) =>
 				notFound: 'page not found',
 				contact: {
 					title: 'contact me',
+					headTitle: 'contact',
 					text: {
 						part_1: 'you can use',
 						part_2: 'or fill out the form to contact me',
@@ -112,18 +117,21 @@ const texts: (locale: Locale) => { [key: string]: any } = (locale) =>
 					},
 				},
 				blog: {
+					headTitle: 'blog',
 					article: {
 						minRead: 'min read',
 					},
 				},
 				projects: {
 					title: 'my projects',
+					headTitle: 'projects',
 					project: {
 						writtenWith: 'Written with'
 					}
 				},
 				about: {
 					title: 'about me',
+					headTitle: 'about',
 				}
 			},
 			recaptcha: {

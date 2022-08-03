@@ -12,12 +12,15 @@ import React, { useCallback, useMemo, useState, useRef } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { Button, Input, Message } from 'rsuite';
 import { TypeAttributes } from 'rsuite/esm/@types/common';
+import { Helmet } from 'react-helmet';
 
 interface ResultProps {
 	type: TypeAttributes.Status | undefined;
 	message: string | undefined;
 	isVisible: boolean;
 }
+
+// TODO buranın arayüzüne bir şekil çek ya
 
 const Contact: NextPage = () => {
 	const { locale } = useRouter();
@@ -100,6 +103,9 @@ const Contact: NextPage = () => {
 	);
 	return (
 		<Layout>
+			<Helmet>
+				<title>halis yücel | {t.pages.contact.headTitle}</title>
+			</Helmet>
 			<Title value={t.pages.contact.title} />
 			<Command className={'mt-2'} location={'~/contact'} />
 			<p className={'text-lg font-source-sans pb-4 mb-4 font-light border-b-2 border-gray'}>

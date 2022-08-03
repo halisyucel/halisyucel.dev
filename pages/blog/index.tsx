@@ -7,6 +7,8 @@ import { BlogData, getBlogData } from '../../utils/blog';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import React from 'react';
+import { Helmet } from 'react-helmet';
+import texts, { Locale } from '../../utils/texts';
 
 interface BlogProps {
 	data: BlogData[];
@@ -19,8 +21,12 @@ interface BlogProps {
 
 const Blog: NextPage<BlogProps> = ({ data, meta }) => {
 	const router = useRouter();
+	const t = texts(router.locale as Locale);
 	return (
 		<Layout>
+			<Helmet>
+				<title>halis yücel | {t.pages.blog.headTitle}</title>
+			</Helmet>
 			<Title value={'blog'} />
 			<Command className={'mt-2'} location={'~/blog'} />
 			<div className={'mt-4'}>

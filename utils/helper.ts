@@ -8,7 +8,7 @@ export const routesToNames: { [key: string]: string } = {
 };
 
 export const routesToBack: { [key: string]: string | null } = {
-	'/': null,
+	'/': 'shake',
 	'/blog': '/',
 	'/blog/[page]': '/blog',
 	'/projects': '/',

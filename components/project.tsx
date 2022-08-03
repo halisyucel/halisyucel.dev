@@ -71,8 +71,6 @@ const getIconsForProject = (iconName: string) => {
 	}
 };
 
-// TODO multiple "written with" eklenecek
-
 const Project: React.FC<ProjectData> = ({
 	title,
 	subtitle,

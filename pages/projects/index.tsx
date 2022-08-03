@@ -9,6 +9,7 @@ import { Locale } from '../../utils/texts';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import React from 'react';
+import { Helmet } from 'react-helmet';
 
 interface ProjectsProps {
 	data: ProjectData[];
@@ -18,14 +19,15 @@ interface ProjectsProps {
 		total: number;
 	};
 }
-	
-// TODO projelere responsive olduklarını da ekle
 
 const Projects: NextPage<ProjectsProps> = ({ data, meta }) => {
 	const router = useRouter();
 	const t = texts(router.locale as Locale);
 	return (
 		<Layout>
+			<Helmet>
+				<title>halis yücel | {t.pages.projects.headTitle}</title>
+			</Helmet>
 			<Title value={t.pages.projects.title} />
 			<Command className={'mt-2'} location={'~/projects'} />
 			<div className={'mt-4'}>
@@ -39,7 +41,6 @@ const Projects: NextPage<ProjectsProps> = ({ data, meta }) => {
 						lang={project.lang}
 						demo={project.demo}
 						github={project.github}
-						isFinished={project.isFinished}
 						hasPWASupport={project.hasPWASupport}
 						technologies={project.technologies}
 					/>
