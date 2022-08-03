@@ -1,5 +1,14 @@
 [
 	{
+		"id": 3,
+		"title": "Strapi nedir? Nasıl kullanılır? | Strapi Rehberi-1",
+		"date": "2022-08-03",
+		"readingTime": 4,
+		"description": "Strapi, içeriğimizi yönetmek için bize bir admin paneli, medya kütüphanesi ve isteğimize göre genişletilebilir bir API sunan; açık kaynaklı, esnek ve ücretsiz bir headless CMS uygulamasıdır. Piyasadaki açık kaynaklı diğer headless CMS uygulamaları arasında hem kullanım kolaylığı hem de popülerlik açısından zirvede bulunmaktadır...",
+		"url": "https://medium.com/@halisyucel/strapi-nedir-nas%C4%B1l-kullan%C4%B1l%C4%B1r-strapi-rehberi-1-66c5e9040bd3",
+		"image": "https://miro.medium.com/max/875/0*lzmRckC4fKhGFuVa.png"
+	},
+	{
 		"id": 2,
 		"title": "Next.js Veri Alma Fonksiyonları",
 		"date": "2022-06-24",
