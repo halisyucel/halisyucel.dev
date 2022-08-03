@@ -10,6 +10,7 @@ module.exports = {
 			md: { max: '768px' },
 			sm: { max: '600px' },
 			xs: { max: '480px' },
+			xxs: { max: '380px' }
 		},
 		extend: {
 			width: {

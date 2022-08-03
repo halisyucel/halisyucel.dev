@@ -85,34 +85,41 @@ const Project: React.FC<ProjectData> = ({
 	const t = texts(router.locale as Locale);
 	return (
 		<div className={'mb-4'}>
-			<div className={'flex justify-start items-end'}>
-				{demo ? (
-					<a
-						href={demo}
-						target={'_blank'}
-						rel={'noopener noreferrer'}
-						className={
-							'font-source-sans font-extrabold text-3xl text-black underline hover:text-black focus:text-black'
-						}
-					>
-						{title}
-					</a>
-				) : (
-					<h2 className={'font-source-sans font-extrabold text-3xl text-black underline'}>
-						{title}
-					</h2>
-				)}
-				{hasPWASupport && (
-					<span
-						className={
-							'block bg-white px-3 py-0.5 text-2xl rounded-xl ml-4 mb-0.5 text-real-black'
-						}
-					>
-						<SiPwa />
-					</span>
-				)}
+			<div className={'flex justify-start items-center md:flex-col md:items-start'}>
+				<div className={'flex flex-col md:mb-2'}>
+					<div className={'flex justify-start items-end flex-wrap'}>
+						{demo ? (
+							<a
+								href={demo}
+								target={'_blank'}
+								rel={'noopener noreferrer'}
+								className={
+									'font-source-sans font-extrabold text-3xl text-black underline hover:text-black focus:text-black'
+								}
+							>
+								{title}
+							</a>
+						) : (
+							<h2 className={'font-source-sans font-extrabold text-3xl text-black underline'}>
+								{title}
+							</h2>
+						)}
+						{hasPWASupport && (
+							<span
+								className={
+									'block bg-white px-3 py-0.5 text-2xl rounded-xl ml-4 mb-0.5 text-real-black md:hidden'
+								}
+							>
+								<SiPwa />
+							</span>
+						)}
+					</div>
+					<h3 className={'font-source-sans font-normal text-sm'}>
+						{subtitle[router.locale as Locale]}
+					</h3>
+				</div>
 				<span className={'flex-1'} />
-				<span className={'flex font-source-sans font-normal text-sm'}>
+				<span className={'flex font-source-sans font-normal text-sm md:mb-1'}>
 					<span className={'text-lg mr-2'}>{getIconsForProject(lang.toLowerCase())}</span>
 					{router.locale === 'tr' ? (
 						<React.Fragment>
@@ -125,14 +132,11 @@ const Project: React.FC<ProjectData> = ({
 					)}
 				</span>
 			</div>
-			<h3 className={'font-source-sans font-normal text-sm'}>
-				{subtitle[router.locale as Locale]}
-			</h3>
 			<div
 				className={'font-source-sans font-normal text-sm mt-1.5 border-l-[1px] pl-2'}
 				dangerouslySetInnerHTML={{ __html: description[router.locale as Locale] }}
 			/>
-			<div className={'flex mt-2 justify-start items-center flex-wrap'}>
+			<div className={'flex mt-2 justify-start items-center flex-wrap md:mt-4'}>
 				{demo && (
 					<a
 						href={demo}

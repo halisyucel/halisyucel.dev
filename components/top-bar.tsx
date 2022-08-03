@@ -71,7 +71,7 @@ const TopBar = () => {
 					<GoThreeBars className={'text-teal-500 h-[16px]'} />
 				</button>
 				<ul
-					className={`fixed left-9 top-16 p-2 bg-white rounded-lg shadow-tab animate__animated animate__tada ${
+					className={`fixed z-10 lg:left-16 lg:top-[5.5rem] md:left-9 md:top-16 p-2 bg-white rounded-lg shadow-tab ${
 						isMobileMenuOpen ? 'block' : 'hidden'
 					}`}
 				>

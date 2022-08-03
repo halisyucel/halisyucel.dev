@@ -8,15 +8,15 @@ const Article: React.FC<BlogData> = ({ title, date, readingTime, description, ur
 	const { locale } = useRouter();
 	const t = texts(locale as Locale);
 	return (
-		<article className={'flex w-full h-32 mb-4 last:mb-0'}>
+		<article className={'flex w-full h-32 mb-4 last:mb-0 md:flex-col md:h-[unset] md:mb-6'}>
 			<a
 				href={url}
 				target={'_blank'}
 				rel={'noopener noreferrer'}
-				className={'text-black hover:text-black'}
+				className={'text-black hover:text-black md:mb-4'}
 			>
-				<figure className={'w-48 h-full mr-4 rounded-2xl overflow-hidden'}>
-					<img className={'h-full'} src={image} alt={title} />
+				<figure className={'w-48 h-full mr-4 overflow-hidden md:h-64 md:w-full flex items-center justify-center xs:h-52 xxs:h-40'}>
+					<img className={'w-full'} src={image} alt={title} />
 				</figure>
 			</a>
 			<div className={'flex-1 h-full flex flex-col'}>
@@ -26,7 +26,7 @@ const Article: React.FC<BlogData> = ({ title, date, readingTime, description, ur
 					rel={'noopener noreferrer'}
 					className={'text-black hover:text-black pb-1'}
 				>
-					<h2 className={'text-3xl font-source-sans font-extrabold'}>{title}</h2>
+					<h2 className={'text-3xl font-source-sans font-extrabold sm:text-xl sm:mb-2'}>{title}</h2>
 				</a>
 				<p
 					className={

@@ -108,15 +108,16 @@ const Contact: NextPage = () => {
 			</Helmet>
 			<Title value={t.pages.contact.title} />
 			<Command className={'mt-2'} location={'~/contact'} />
-			<p className={'text-lg font-source-sans pb-4 mb-4 font-light border-b-2 border-gray'}>
-				{t.pages.contact.text.part_1}
+			<p className={'text-lg font-source-sans pb-4 mb-4 font-light border-b-2 border-gray flex flex-wrap'}>
+				{t.pages.contact.text.part_1}&nbsp;
 				<MailBox value={process.env.NEXT_PUBLIC_EMAIL as string} />
 				{t.pages.contact.text.part_2}
 			</p>
-			<form className={'w-[min(100%,400px)]'} onSubmit={handleSubmit}>
+			<form className={'w-full max-w-[320px]'} onSubmit={handleSubmit}>
 				<div className={'mb-4'}>
-					<Label value={t.pages.contact.labels.name} error={nameError}>
+					<Label error={nameError}>
 						<Input
+							placeholder={t.pages.contact.labels.name}
 							name={'name'}
 							spellCheck={false}
 							autoComplete={'off'}
@@ -125,8 +126,9 @@ const Contact: NextPage = () => {
 							onChange={(value) => setName(value)}
 						/>
 					</Label>
-					<Label value={t.pages.contact.labels.email} error={emailError}>
+					<Label error={emailError}>
 						<Input
+							placeholder={t.pages.contact.labels.email}
 							name={'email'}
 							spellCheck={false}
 							autoComplete={'off'}
@@ -134,8 +136,9 @@ const Contact: NextPage = () => {
 							onChange={(value) => setEmail(value)}
 						/>
 					</Label>
-					<Label value={t.pages.contact.labels.message} error={messageError}>
+					<Label error={messageError}>
 						<Input
+							placeholder={t.pages.contact.labels.message}
 							as={'textarea'}
 							name={'message'}
 							spellCheck={false}

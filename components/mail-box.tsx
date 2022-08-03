@@ -18,7 +18,7 @@ const MailBox: React.FC<MailBoxProps> = ({ value }) => {
 			onMouseEnter={() => setHover(true)}
 			onMouseLeave={() => setHover(false)}
 		>
-			&nbsp;{value}&nbsp;
+			{value}&nbsp;
 			<span
 				className={`${
 					hover ? 'inline' : 'hidden'
