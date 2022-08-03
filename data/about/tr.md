@@ -10,6 +10,6 @@ Bugünlerde **Next.js** gibi frameworkler üzerinde çalışıyorum. **Jamstack*
 
 ---
 
-Şu sıralar freelance olarak hizmet vermekteyim. Benimle iletişime geçmek için **[isaycel@gmail.com](mailto:isaycel@gmail.com)** adresini kullanabilirsiniz.
+Şu sıralar freelance olarak hizmet vermekteyim. Benimle iletişime geçmek için **[isaycel2001@gmail.com](mailto:isaycel2001@gmail.com)** adresini kullanabilirsiniz.
 
 Aynı zamanda Gazi Üniversitesi Tıp Fakültesi 3.sınıf öğrencisiyim.
