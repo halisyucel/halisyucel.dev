@@ -1,11 +1,11 @@
 import { RootState } from '../redux/store';
+import texts, { Locale } from '../utils/texts';
 import Content from './content';
 import NavBar from './nav-bar';
-import React, { useEffect } from 'react';
-import { useSelector } from 'react-redux';
-import { Helmet } from 'react-helmet';
 import { useRouter } from 'next/router';
-import texts, { Locale } from '../utils/texts';
+import React, { useEffect } from 'react';
+import { Helmet } from 'react-helmet';
+import { useSelector } from 'react-redux';
 
 interface LayoutProps {
 	children: React.ReactNode;
@@ -25,7 +25,10 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 				<title>halis yücel</title>
 				<meta charSet="UTF-8" />
 				<meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-				<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0" />
+				<meta
+					name="viewport"
+					content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0"
+				/>
 				<meta name="description" content={t.meta.description} />
 				<meta name="robots" content="index, follow" />
 				<link rel="icon" href="/favicon.png" type={'image/png'} />

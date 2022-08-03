@@ -11,13 +11,11 @@ export interface HistoryTab {
 export interface HistoryState {
 	lastTab: HistoryTab | null;
 	tabs: HistoryTab[];
-	previousRoute: string | null;
 }
 
 const initialState: HistoryState = {
 	lastTab: null,
 	tabs: [],
-	previousRoute: null,
 };
 
 export const historySlice = createSlice({

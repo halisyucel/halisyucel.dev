@@ -16,7 +16,10 @@ const Error404: NextPage = () => {
 				<title>halis yücel</title>
 				<meta charSet="UTF-8" />
 				<meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-				<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0" />
+				<meta
+					name="viewport"
+					content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0"
+				/>
 				<meta name="robots" content="noindex, nofollow" />
 				<link rel="icon" href="/favicon.png" type={'image/png'} />
 			</Helmet>

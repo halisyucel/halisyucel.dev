@@ -2,10 +2,10 @@ import { ProjectData } from '../utils/projects';
 import texts, { Locale } from '../utils/texts';
 import { useRouter } from 'next/router';
 import React from 'react';
-import { FaSass } from 'react-icons/fa';
-import { MdMobileFriendly } from 'react-icons/md';
-import { FiExternalLink, FiGithub } from 'react-icons/fi';
 import { BiMailSend } from 'react-icons/bi';
+import { FaSass } from 'react-icons/fa';
+import { FiExternalLink, FiGithub } from 'react-icons/fi';
+import { MdMobileFriendly } from 'react-icons/md';
 import {
 	SiEslint,
 	SiJavascript,
@@ -22,7 +22,7 @@ import {
 	SiReacttable,
 	SiGoogletranslate,
 	SiRedis,
-	SiVite
+	SiVite,
 } from 'react-icons/si';
 import { IconButton } from 'rsuite';
 
@@ -125,8 +125,10 @@ const Project: React.FC<ProjectData> = ({
 					)}
 				</span>
 			</div>
-			<h3 className={'font-source-sans font-normal text-sm'}>{subtitle[router.locale as Locale]}</h3>
-			<div 
+			<h3 className={'font-source-sans font-normal text-sm'}>
+				{subtitle[router.locale as Locale]}
+			</h3>
+			<div
 				className={'font-source-sans font-normal text-sm mt-1.5 border-l-[1px] pl-2'}
 				dangerouslySetInnerHTML={{ __html: description[router.locale as Locale] }}
 			/>

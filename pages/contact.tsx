@@ -10,9 +10,9 @@ import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import React, { useCallback, useMemo, useState, useRef } from 'react';
 import ReCAPTCHA from 'react-google-recaptcha';
+import { Helmet } from 'react-helmet';
 import { Button, Input, Message } from 'rsuite';
 import { TypeAttributes } from 'rsuite/esm/@types/common';
-import { Helmet } from 'react-helmet';
 
 interface ResultProps {
 	type: TypeAttributes.Status | undefined;

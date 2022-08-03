@@ -4,7 +4,8 @@ const texts: (locale: Locale) => { [key: string]: any } = (locale) =>
 	({
 		tr: {
 			meta: {
-				description: 'Merhaba, ben **Halis Yücel** 👋. Hobi olarak başladığım yazılım serüvenime başlayalı yaklaşık üç yıl oldu ve bu işi profesyonel olarak yapmaya oldukça niyetliyim...'				
+				description:
+					'Merhaba, ben **Halis Yücel** 👋. Hobi olarak başladığım yazılım serüvenime başlayalı yaklaşık üç yıl oldu ve bu işi profesyonel olarak yapmaya oldukça niyetliyim...',
 			},
 			navigation: {
 				about: 'hakkımda',
@@ -61,13 +62,13 @@ const texts: (locale: Locale) => { [key: string]: any } = (locale) =>
 					headTitle: 'projeler',
 					title: 'projelerim',
 					project: {
-						writtenWith: 'ile yazıldı'
-					}
+						writtenWith: 'ile yazıldı',
+					},
 				},
 				about: {
 					title: 'hakkımda',
 					headTitle: 'hakkımda',
-				}
+				},
 			},
 			recaptcha: {
 				failed: 'reCAPTCHA doğrulaması başarısız oldu',
@@ -75,7 +76,8 @@ const texts: (locale: Locale) => { [key: string]: any } = (locale) =>
 		},
 		en: {
 			meta: {
-				description: 'Hi, I\'m Halis Yücel 👋. It has been about three years since I started my software adventure, which I started as a hobby, and I am quite intent on doing this professionally...'
+				description:
+					"Hi, I'm Halis Yücel 👋. It has been about three years since I started my software adventure, which I started as a hobby, and I am quite intent on doing this professionally...",
 			},
 			navigation: {
 				about: 'about',
@@ -132,13 +134,13 @@ const texts: (locale: Locale) => { [key: string]: any } = (locale) =>
 					title: 'my projects',
 					headTitle: 'projects',
 					project: {
-						writtenWith: 'Written with'
-					}
+						writtenWith: 'Written with',
+					},
 				},
 				about: {
 					title: 'about me',
 					headTitle: 'about',
-				}
+				},
 			},
 			recaptcha: {
 				failed: 'reCAPTCHA validation failed',

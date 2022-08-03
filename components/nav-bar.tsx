@@ -47,7 +47,11 @@ const NavBar = () => {
 						</li>
 					))}
 				</ul>
-				<ul className={'absolute w-full left-0 bottom-0 flex text-[28px] pt-2 ml-0.5 mb-0 border-t-2 border-gray'}>
+				<ul
+					className={
+						'absolute w-full left-0 bottom-0 flex text-[28px] pt-2 ml-0.5 mb-0 border-t-2 border-gray'
+					}
+				>
 					{[
 						{ href: 'https://github.com/halisyucel', icon: <AiFillGithub /> },
 						{ href: 'https://medium.com/@halisyucel', icon: <AiFillMediumCircle /> },
