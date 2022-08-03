@@ -1,10 +1,8 @@
 import ReturnBack from './return-back';
 import ToggleLang from './toggle-lang';
 import React, { useState, useEffect } from 'react';
-import { BiGitBranch } from 'react-icons/bi';
+import { BiGitBranch, BiSitemap } from 'react-icons/bi';
 import { Tag } from 'rsuite';
-
-// TODO sitemap ekle
 
 const BottomBar = () => {
 	const [positions, setPositions] = useState<number[]>([0, 0]);
@@ -31,6 +29,19 @@ const BottomBar = () => {
 			</Tag>
 			<Tag>UTF-8</Tag>
 			<Tag>Tab</Tag>
+			<Tag
+				as={'a'}
+				className={'hover:no-underline'}
+				href={'/sitemap.xml'}
+				target={'_blank'}
+				rel={'noopener noreferrer'}
+			>
+				<span className={'flex justify-center items-center'}>
+					<BiSitemap />
+					&nbsp;
+					<span>sitemap</span>
+				</span>
+			</Tag>
 			<Tag
 				as={'a'}
 				className={'hover:no-underline'}
