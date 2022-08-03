@@ -9,7 +9,7 @@ const NavBar = () => {
 	const { locale } = useRouter();
 	const t = texts(locale as Locale);
 	return (
-		<Paper className={'w-[320px] mr-10 '}>
+		<Paper className={'w-[320px] mr-10 lg:hidden'}>
 			<nav className={'relative h-full pb-10'}>
 				<div
 					className={'w-full h-[280px] rounded-2xl bg-cover bg-no-repeat bg-center'}

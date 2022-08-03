@@ -21,10 +21,10 @@ const BottomBar = () => {
 				'flex justify-center items-center bg-bg-secondary w-full h-10 border-t-2 border-gray'
 			}
 		>
-			<ReturnBack className={'mr-[10px]'} />
+			<ReturnBack className={'mr-[10px] sm:!hidden'} />
 			<ToggleLang />
 			<span className={'flex-1'} />
-			<Tag>
+			<Tag className={'md:!hidden'}>
 				{positions[0]}:{positions[1]}
 			</Tag>
 			<Tag>UTF-8</Tag>
@@ -37,9 +37,8 @@ const BottomBar = () => {
 				rel={'noopener noreferrer'}
 			>
 				<span className={'flex justify-center items-center'}>
-					<BiSitemap />
-					&nbsp;
-					<span>sitemap</span>
+					<BiSitemap className={'h-[20px]'} />
+					<span className={'md:hidden'}>&nbsp;sitemap</span>
 				</span>
 			</Tag>
 			<Tag
@@ -50,9 +49,8 @@ const BottomBar = () => {
 				rel={'noopener noreferrer'}
 			>
 				<span className={'flex justify-center items-center'}>
-					<BiGitBranch />
-					&nbsp;
-					<span className={'text-green-600'}>main</span>
+					<BiGitBranch className={'h-[20px]'} />
+					<span className={'text-green-600 md:hidden'}>&nbsp;main</span>
 				</span>
 			</Tag>
 		</div>

@@ -3,14 +3,21 @@ import HistoryTab from './history-tab';
 import confetti from 'canvas-confetti';
 import React, { useCallback, useState } from 'react';
 import { FaPlay, FaBug } from 'react-icons/fa';
+import { GoThreeBars } from 'react-icons/go';
 import { useSelector } from 'react-redux';
 import { IconButton } from 'rsuite';
 import { HistoryTab as HistoryTabProps } from '../redux/features/history';
+import texts, { Locale } from '../utils/texts';
+import { useRouter } from 'next/router';
+import Link from 'next/link';
 
 const TopBar = () => {
+	const { locale } = useRouter();
+	const t = texts(locale as Locale);
 	const history = useSelector((state: RootState) => state.history);
 	const [isDebuggerOpen, setIsDebuggerOpen] = useState<boolean>(false);
 	const [isConfettiActive, setIsConfettiActive] = useState<boolean>(false);
+	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 	const confettiShow = useCallback(() => {
 		setIsConfettiActive(true);
 
@@ -54,8 +61,30 @@ const TopBar = () => {
 				className={
 					'flex justify-center items-center bg-bg-secondary w-full h-10 border-b-2 border-gray'
 				}
-			>
-				<div className={'flex flex-1 overflow-visible'}>
+			>	
+				<button 
+					onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+					className={'text-xs px-2 py-1 bg-white mr-2 rounded-lg cursor-pointer hidden justify-center items-center lg:flex hover:shadow-tab'}>
+					<GoThreeBars className={'text-teal-500 h-[16px]'} />
+				</button>
+				<ul className={`fixed left-9 top-16 p-2 bg-white rounded-lg shadow-tab animate__animated animate__tada ${isMobileMenuOpen ? 'block' : 'hidden'}`}>
+					{[
+						{ label: t.navigation.about, href: '/' },
+						{ label: t.navigation.blog, href: '/blog' },
+						{ label: t.navigation.projects, href: '/projects' },
+						{ label: t.navigation.contact, href: '/contact' },
+					].map((item, index) => (
+						<li key={index} className={'mb-0.5 last:mb-0'}>
+							<Link href={item.href}>
+								<a className={'block font-source-sans font-extrabold text-sm text-black'}>
+									{item.label}
+								</a>
+							</Link>
+						</li>
+					))}
+				</ul>
+				<span className={'hidden flex-1 md:block'} />
+				<div className={'flex flex-1 overflow-visible md:hidden'}>
 					{(history.tabs as HistoryTabProps[]).map((tab, index) => (
 						<HistoryTab
 							key={index}

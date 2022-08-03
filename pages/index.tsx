@@ -20,7 +20,7 @@ const About: NextPage<AboutProps> = ({ data }) => {
 		<Layout>
 			<Title value={t.pages.about.title} />
 			<Command className={'mt-2'} location={'~/about'} />
-			<div className={'markdown-content font-source-sans'}>
+			<div className={'markdown-content font-source-sans mb-12'}>
 				<ReactMarkdown>{data}</ReactMarkdown>
 			</div>
 		</Layout>
