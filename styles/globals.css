@@ -22,3 +22,15 @@
 	border-radius: 6px;
 	background: #575757;
 }
+
+.markdown-content {
+	margin-top: 1rem;
+}
+.markdown-content > h2 {
+	font-weight: 400;
+	font-size: 1.5rem;
+}
+.markdown-content p {
+	font-size: 1rem;
+	line-height: 1.5;
+}

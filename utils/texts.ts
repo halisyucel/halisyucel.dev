@@ -3,6 +3,9 @@ type Locale = 'tr' | 'en';
 const texts: (locale: Locale) => { [key: string]: any } = (locale) =>
 	({
 		tr: {
+			meta: {
+				description: 'Merhaba, ben **Halis Yücel** 👋. Hobi olarak başladığım yazılım serüvenime başlayalı yaklaşık üç yıl oldu ve bu işi profesyonel olarak yapmaya oldukça niyetliyim...'				
+			},
 			navigation: {
 				about: 'hakkımda',
 				blog: 'blog',
@@ -71,6 +74,9 @@ const texts: (locale: Locale) => { [key: string]: any } = (locale) =>
 			},
 		},
 		en: {
+			meta: {
+				description: 'Hi, I\'m Halis Yücel 👋. It has been about three years since I started my software adventure, which I started as a hobby, and I am quite intent on doing this professionally...'
+			},
 			navigation: {
 				about: 'about',
 				blog: 'blog',
