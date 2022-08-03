@@ -15,7 +15,6 @@ export interface ProjectData {
 	lang: string;
 	demo: string | null;
 	github: string | null;
-	isFinished: boolean;
 	hasPWASupport: boolean;
 	technologies: string[];
 }

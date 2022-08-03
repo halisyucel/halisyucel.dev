@@ -1,19 +1,18 @@
 [
 	{
 		"id": 1,
-		"title": "tibbiyelidergi.com",
+		"title": "tıbbiyeli dergi",
 		"subtitle": {
 			"en": "a full-stack web application",
 			"tr": "full-stack web uygulaması"
 		},
 		"description": {
-			"en": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-			"tr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+			"en": "It is a blog application for medical students with Next.js on the front and Strapi Headless CMS on the back. High speed is one of the prominent features of this site, as almost every page is tried to be rendered statically. It is also easily accessible on mobile devices with its responsive interface design and PWA application support.",
+			"tr": "Tıp öğrencileri için ön tarafta Next.js, arka tarafta Strapi Headless CMS ile yapılmış bir blog uygulamasıdır. Neredeyse her sayfa statik olarak render edilmeye çalışıldığı için yüksek hız bu sitenin öne çıkan özelliklerindendir. Responsive arayüz tasarımı ve PWA uygulama desteği ile mobil cihazlarda da rahatlıkla erişilebilir durumdadır."
 		},
 		"lang": "JavaScript",
 		"demo": "https://tibbiyelidergi.com",
 		"github": null,
-		"isFinished": true,
 		"hasPWASupport": true,
 		"technologies": [
 			"react",
@@ -24,6 +23,7 @@
 			"axios",
 			"joi",
 			"scss",
+			"responsive design",
 			"|",
 			"strapi",
 			"sendgrid",
@@ -43,13 +43,12 @@
 			"tr": "kişisel web sitesi"
 		},
 		"description": {
-			"en": "a personal website",
-			"tr": "alışılmışın dışında bir tasarımı var editor gibi"
+			"en": "It is the site you are currently on. It is made with Next.js and has multi-language support. Styled using TailwindCSS. It has an unusual design in appearance. It has been tried to be likened to a code editor.",
+			"tr": "Şu an içinde bulunduğunuz sitenin kendisidir. Next.js ile yapılmış olup çoklu dil desteğine sahiptir. TailwindCSS kullanarak sitillendirilmiştir. Tasarım olarak alışılmışın dışında bir görüntüsü vardır. Bir kod editörüne benzetilmeye çalışılmıştır."
 		},
 		"lang": "TypeScript",
 		"demo": "https://halisyucel.me",
 		"github": "https://github.com/halisyucel/halisyucel.me",
-		"isFinished": true,
 		"hasPWASupport": false,
 		"technologies": [
 			"react",
@@ -60,9 +59,68 @@
 			"axios",
 			"joi",
 			"tailwindcss",
-			"scss",
+			"responsive design",
 			"|",
 			"sendgrid",
+			"|",
+			"prettier",
+			"eslint"
+		]
+	},
+	{
+		"id": 3,
+		"title": "words in a sentence",
+		"subtitle": {
+			"en": "a hobby project",
+			"tr": "hobi projesi"
+		},
+		"description": {
+			"en": "This site, which I have made especially for English learners, offers you the meaning of the word you are looking for and its use in sentences with many different examples. In the backend, it creates its own frontend by mining data from many different sites. It translates the sentences it can't find the translation for with the Google Cloud Translate API. It also stores translations in a Redis database to save on the Google API. Thus, it translates the same sentence only once using the API, and then uses the translations from the database for subsequent requests.",
+			"tr": "Özellikle İngilizce öğrenenlere yönelik yaptığım bu site esas olarak size aradığınız kelimenin anlamlarını ve birçok farklı şekilde cümle içinde kullanımlarını sunar. Arka tarafta birçok farklı siteden verileri kazarak kendi ön yüzünü oluşturmaktadır. Çevirisini bulamadağı cümleleri Google Cloud Translate API ile çevirir. Google API'sinden tasarruf etmek için de bir Redis veritabanında çevirileri depolar. Böylelikle aynı cümleyi sadece bir kez API kullanarak çevirir, sonraki isteklerde veritabanından çevirileri çekerek kullanır."
+		},
+		"lang": "JavaScript",
+		"demo": "https://words-in-a-sentence-tr.vercel.app",
+		"github": "https://github.com/halisyucel/words-in-a-sentence-tr.git",
+		"hasPWASupport": true,
+		"technologies": [
+			"react",
+			"redux",
+			"next.js",
+			"axios",
+			"joi",
+			"tailwindcss",
+			"responsive design",
+			"|",
+			"google translate api",
+			"redis",
+			"slugify",
+			"jsonwebtokens",
+			"|",
+			"prettier",
+			"eslint"
+		]
+	},
+	{
+		"id": 4,
+		"title": "shopify landing page clone",
+		"subtitle": {
+			"en": "a landing page",
+			"tr": "karşılama sayfası/landing page"
+		},
+		"description": {
+			"en": "It is a clone of <a href=\"https://www.shopify.com/free-trial\" target=\"_blank\" rel=\"noopener noreferrer\">shopify.com/free-trial</a>. However, the actual page has changed a bit now.",
+			"tr": "<a href=\"https://www.shopify.com/free-trial\" target=\"_blank\" rel=\"noopener noreferrer\">shopify.com/free-trial</a> sayfasının klonudur. Ancak geçen zaman içinde gerçek sayfa biraz değişmiştir."
+		},
+		"lang": "TypeScript",
+		"demo": "https://shopify-landing-page-clone.vercel.app",
+		"github": "https://github.com/halisyucel/shopify-landing-page-clone.git",
+		"hasPWASupport": false,
+		"technologies": [
+			"react",
+			"redux",
+			"vite.js",
+			"tailwindcss",
+			"responsive design",
 			"|",
 			"prettier",
 			"eslint"

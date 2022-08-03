@@ -3,7 +3,9 @@ import texts, { Locale } from '../utils/texts';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { FaSass } from 'react-icons/fa';
+import { MdMobileFriendly } from 'react-icons/md';
 import { FiExternalLink, FiGithub } from 'react-icons/fi';
+import { BiMailSend } from 'react-icons/bi';
 import {
 	SiEslint,
 	SiJavascript,
@@ -18,6 +20,9 @@ import {
 	SiTypescript,
 	SiPwa,
 	SiReacttable,
+	SiGoogletranslate,
+	SiRedis,
+	SiVite
 } from 'react-icons/si';
 import { IconButton } from 'rsuite';
 
@@ -51,22 +56,30 @@ const getIconsForProject = (iconName: string) => {
 			return <SiTailwindcss className={'text-blue-400'} />;
 		case 'react-query':
 			return <SiReacttable className={'text-red-600'} />;
+		case 'responsive design':
+			return <MdMobileFriendly className={'text-red-600'} />;
+		case 'sendgrid':
+			return <BiMailSend className={'text-blue-600'} />;
+		case 'google translate api':
+			return <SiGoogletranslate className={'text-blue-500'} />;
+		case 'redis':
+			return <SiRedis className={'text-red-600'} />;
+		case 'vite.js':
+			return <SiVite className={'text-purple-600'} />;
 		default:
 			return null;
 	}
 };
 
-// TODO is finished eklenecek
+// TODO multiple "written with" eklenecek
 
 const Project: React.FC<ProjectData> = ({
-	id,
 	title,
 	subtitle,
 	description,
 	lang,
 	demo,
 	github,
-	isFinished,
 	hasPWASupport,
 	technologies,
 }) => {
@@ -114,10 +127,11 @@ const Project: React.FC<ProjectData> = ({
 					)}
 				</span>
 			</div>
-			<h3 className={'font-source-sans font-normal text-sm'}>{subtitle.en}</h3>
-			<div className={'font-source-sans font-normal text-sm mt-1.5 border-l-[1px] pl-2'}>
-				{description[router.locale as Locale]}
-			</div>
+			<h3 className={'font-source-sans font-normal text-sm'}>{subtitle[router.locale as Locale]}</h3>
+			<div 
+				className={'font-source-sans font-normal text-sm mt-1.5 border-l-[1px] pl-2'}
+				dangerouslySetInnerHTML={{ __html: description[router.locale as Locale] }}
+			/>
 			<div className={'flex mt-2 justify-start items-center flex-wrap'}>
 				{demo && (
 					<a
