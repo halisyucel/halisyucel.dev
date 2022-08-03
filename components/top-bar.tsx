@@ -5,9 +5,10 @@ import React, { useCallback, useState } from 'react';
 import { FaPlay, FaBug } from 'react-icons/fa';
 import { useSelector } from 'react-redux';
 import { IconButton } from 'rsuite';
+import { HistoryTab as HistoryTabProps } from '../redux/features/history';
 
 const TopBar = () => {
-	const { tabs } = useSelector((state: RootState) => state.history);
+	const history = useSelector((state: RootState) => state.history);
 	const [isDebuggerOpen, setIsDebuggerOpen] = useState<boolean>(false);
 	const [isConfettiActive, setIsConfettiActive] = useState<boolean>(false);
 	const confettiShow = useCallback(() => {
@@ -55,7 +56,7 @@ const TopBar = () => {
 				}
 			>
 				<div className={'flex flex-1 overflow-visible'}>
-					{tabs.map((tab, index) => (
+					{(history.tabs as HistoryTabProps[]).map((tab, index) => (
 						<HistoryTab
 							key={index}
 							name={tab.name}
