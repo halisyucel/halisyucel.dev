@@ -9,8 +9,8 @@ const NavBar = () => {
 	const { locale } = useRouter();
 	const t = texts(locale as Locale);
 	return (
-		<Paper className={'w-[320px] mr-10'}>
-			<nav>
+		<Paper className={'w-[320px] mr-10 '}>
+			<nav className={'relative h-full pb-10'}>
 				<div
 					className={'w-full h-[280px] rounded-2xl bg-cover bg-no-repeat bg-center'}
 					style={{
@@ -31,7 +31,7 @@ const NavBar = () => {
 				>
 					halisyucel
 				</p>
-				<ul className={'ml-0.5 border-b-2 pb-2 mb-2 border-gray'}>
+				<ul className={'ml-0.5 mb-2'}>
 					{[
 						{ label: t.navigation.about, href: '/' },
 						{ label: t.navigation.blog, href: '/blog' },
@@ -47,7 +47,7 @@ const NavBar = () => {
 						</li>
 					))}
 				</ul>
-				<ul className={'flex text-[28px] ml-0.5 mb-0'}>
+				<ul className={'absolute w-full left-0 bottom-0 flex text-[28px] pt-2 ml-0.5 mb-0 border-t-2 border-gray'}>
 					{[
 						{ href: 'https://github.com/halisyucel', icon: <AiFillGithub /> },
 						{ href: 'https://medium.com/@halisyucel', icon: <AiFillMediumCircle /> },
