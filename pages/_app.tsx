@@ -10,8 +10,6 @@ import { useEffect } from 'react';
 import { Provider } from 'react-redux';
 import 'rsuite/dist/rsuite.min.css';
 
-// TODO tıbbiyelidergideki link aktif hale getirelecek
-
 function MyApp({ Component, pageProps }: AppProps) {
 	const router = useRouter();
 	useEffect(() => {

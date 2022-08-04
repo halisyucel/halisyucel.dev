@@ -20,8 +20,6 @@ interface ResultProps {
 	isVisible: boolean;
 }
 
-// TODO buranın arayüzüne bir şekil çek ya
-
 const Contact: NextPage = () => {
 	const { locale } = useRouter();
 	const t = texts(locale as Locale);

@@ -16,8 +16,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 	await sgMail.send({
 		to: process.env.NEXT_PUBLIC_EMAIL,
 		from: {
-			email: 'info@halisyucel.me',
-			name: 'halisyucel.me',
+			email: 'info@halisyucel.dev',
+			name: 'halisyucel.dev',
 		},
 		subject: 'Contact Form',
 		html: `

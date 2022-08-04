@@ -34,7 +34,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 				<link rel="icon" href="/favicon.png" type={'image/png'} />
 				<meta property="og:title" content={'Halis Yücel'} />
 				<meta property="og:site_name" content={'Halis Yücel'} />
-				<meta property="og:url" content={'https://halisyucel.me/'} />
+				<meta property="og:url" content={'https://halisyucel.dev/'} />
 				<meta property="og:description" content={t.meta.description} />
 				<meta property="og:type" content="website" />
 				<meta name="twitter:card" content="app" />

@@ -44,7 +44,7 @@ const BottomBar = () => {
 			<Tag
 				as={'a'}
 				className={'hover:no-underline'}
-				href={'https://github.com/halisyucel/halisyucel.me'}
+				href={'https://github.com/halisyucel/halisyucel.dev'}
 				target={'_blank'}
 				rel={'noopener noreferrer'}
 			>
