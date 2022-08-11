@@ -5,7 +5,7 @@ const texts: (locale: Locale) => { [key: string]: any } = (locale) =>
 		tr: {
 			meta: {
 				description:
-					'Merhaba, ben **Halis Yücel** 👋. Hobi olarak başladığım yazılım serüvenime başlayalı yaklaşık üç yıl oldu ve bu işi profesyonel olarak yapmaya oldukça niyetliyim...',
+					'Merhaba, ben Halis Yücel 👋. Hobi olarak başladığım yazılım serüvenime başlayalı yaklaşık üç yıl oldu ve bu işi profesyonel olarak yapmaya oldukça niyetliyim...',
 			},
 			navigation: {
 				about: 'hakkımda',
