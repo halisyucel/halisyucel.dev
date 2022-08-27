@@ -100,7 +100,11 @@ const Project: React.FC<ProjectData> = ({
 								{title}
 							</a>
 						) : (
-							<h2 className={'font-source-sans font-extrabold text-3xl text-black underline'}>
+							<h2
+								className={
+									'font-source-sans font-extrabold text-3xl text-black underline'
+								}
+							>
 								{title}
 							</h2>
 						)}

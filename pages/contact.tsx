@@ -106,7 +106,11 @@ const Contact: NextPage = () => {
 			</Helmet>
 			<Title value={t.pages.contact.title} />
 			<Command className={'mt-2'} location={'~/contact'} />
-			<p className={'text-lg font-source-sans pb-4 mb-4 font-light border-b-2 border-gray flex flex-wrap'}>
+			<p
+				className={
+					'text-lg font-source-sans pb-4 mb-4 font-light border-b-2 border-gray flex flex-wrap'
+				}
+			>
 				{t.pages.contact.text.part_1}&nbsp;
 				<MailBox value={process.env.NEXT_PUBLIC_EMAIL as string} />
 				{t.pages.contact.text.part_2}

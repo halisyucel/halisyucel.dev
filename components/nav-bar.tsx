@@ -53,8 +53,8 @@ const NavBar = () => {
 					}
 				>
 					{[
-						{ href: 'https://github.com/halisyucel', icon: <AiFillGithub /> },
-						{ href: 'https://medium.com/@halisyucel', icon: <AiFillMediumCircle /> },
+						{ href: process.env.NEXT_PUBLIC_GITHUB_URL, icon: <AiFillGithub /> },
+						{ href: process.env.NEXT_PUBLIC_MEDIUM_URL, icon: <AiFillMediumCircle /> },
 					].map((item, index) => (
 						<li key={index} className={'mr-1 last:mr-0'}>
 							<a

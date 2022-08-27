@@ -15,7 +15,11 @@ const Article: React.FC<BlogData> = ({ title, date, readingTime, description, ur
 				rel={'noopener noreferrer'}
 				className={'text-black hover:text-black md:mb-4'}
 			>
-				<figure className={'w-48 h-full mr-4 overflow-hidden md:h-64 md:w-full flex items-center justify-center xs:h-52 xxs:h-40'}>
+				<figure
+					className={
+						'w-48 h-full mr-4 overflow-hidden md:h-64 md:w-full flex items-center justify-center xs:h-52 xxs:h-40'
+					}
+				>
 					<img className={'w-full'} src={image} alt={title} />
 				</figure>
 			</a>
@@ -26,7 +30,9 @@ const Article: React.FC<BlogData> = ({ title, date, readingTime, description, ur
 					rel={'noopener noreferrer'}
 					className={'text-black hover:text-black pb-1'}
 				>
-					<h2 className={'text-3xl font-source-sans font-extrabold sm:text-xl sm:mb-2'}>{title}</h2>
+					<h2 className={'text-3xl font-source-sans font-extrabold sm:text-xl sm:mb-2'}>
+						{title}
+					</h2>
 				</a>
 				<p
 					className={
