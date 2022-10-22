@@ -8,7 +8,7 @@ import { NextPage } from 'next';
 import { GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import React from 'react';
-import { AiFillGithub, AiFillMediumCircle } from 'react-icons/ai';
+import {AiFillGithub, AiFillLinkedin, AiFillMediumCircle} from 'react-icons/ai';
 import ReactMarkdown from 'react-markdown';
 
 export interface AboutProps {
@@ -42,28 +42,23 @@ const About: NextPage<AboutProps> = ({ data }) => {
 					'flex mb-8 justify-center items-center pb-6 border-b-[1px] border-slate-600/10'
 				}
 			>
-				<a
-					href={process.env.NEXT_PUBLIC_GITHUB_URL}
-					target={'_blank'}
-					rel={'noopener noreferrer'}
-					className={
-						'cursor-pointer text-black font-source-sans flex items-center text-lg mr-10'
-					}
-				>
-					<AiFillGithub className={'text-2xl mr-1.5'} />
-					GitHub
-				</a>
-				<a
-					href={process.env.NEXT_PUBLIC_MEDIUM_URL}
-					target={'_blank'}
-					rel={'noopener noreferrer'}
-					className={
-						'cursor-pointer text-black font-source-sans flex items-center text-lg'
-					}
-				>
-					<AiFillMediumCircle className={'text-2xl mr-1.5'} />
-					Medium
-				</a>
+				{[
+					{ href: process.env.NEXT_PUBLIC_GITHUB_URL, element: <AiFillGithub className={'text-2xl mr-1.5'} />, label: 'GitHub' },
+					{ href: process.env.NEXT_PUBLIC_MEDIUM_URL, element: <AiFillMediumCircle className={'text-2xl mr-1.5'} />, label: 'Medium' },
+					{ href: process.env.NEXT_PUBLIC_LINKEDIN_URL, element: <AiFillLinkedin className={'text-2xl mr-1.5'} />, label: 'Linkedin' }
+				].map((item) => (
+					<a
+						key={item.label}
+						href={item.href}
+						target={'_blank'}
+						rel={'noopener noreferrer'}
+						className={
+							'cursor-pointer text-black font-source-sans flex items-center text-lg mr-6 last:mr-0'
+						}
+					>
+						{item.element} {item.label}
+					</a>
+				))}
 			</div>
 			<GithubActivity />
 		</Layout>

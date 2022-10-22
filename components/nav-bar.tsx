@@ -3,7 +3,7 @@ import Paper from './paper';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
-import { AiFillGithub, AiFillMediumCircle } from 'react-icons/ai';
+import { AiFillGithub, AiFillMediumCircle, AiFillLinkedin } from 'react-icons/ai';
 
 const NavBar = () => {
 	const { locale } = useRouter();
@@ -55,6 +55,7 @@ const NavBar = () => {
 					{[
 						{ href: process.env.NEXT_PUBLIC_GITHUB_URL, icon: <AiFillGithub /> },
 						{ href: process.env.NEXT_PUBLIC_MEDIUM_URL, icon: <AiFillMediumCircle /> },
+						{ href: process.env.NEXT_PUBLIC_LINKEDIN_URL, icon: <AiFillLinkedin /> },
 					].map((item, index) => (
 						<li key={index} className={'mr-1 last:mr-0'}>
 							<a
