@@ -36,15 +36,13 @@ export default async (_: NextApiRequest, res: NextApiResponse) => {
 	const document = dom.window.document;
 
 	const activities: Activity[][] = [];
-
 	const titleElement = document.querySelector(
-		'#js-pjax-container > div.container-xl.px-3.px-md-4.px-lg-5 > div > div.Layout-main > div:nth-child(2) > div > div.mt-4.position-relative > div.js-yearly-contributions > div > h2',
+		'body > div.application-main > main > div.container-xl.px-3.px-md-4.px-lg-5 > div > div.Layout-main > div:nth-child(2) > div > div.mt-4.position-relative > div.js-yearly-contributions > div > h2',
 	) as HTMLHeadElement;
 	const title = (titleElement.textContent as string).replace(/\s+/g, ' ').trim();
-
 	const svgData = Array.from(
 		document.querySelectorAll(
-			'#js-pjax-container > div.container-xl.px-3.px-md-4.px-lg-5 > div > div.Layout-main > div:nth-child(2) > div > div.mt-4.position-relative > div.js-yearly-contributions > div > div > div > svg > g > g',
+			'body > div.application-main > main > div.container-xl.px-3.px-md-4.px-lg-5 > div > div.Layout-main > div:nth-child(2) > div > div.mt-4.position-relative > div.js-yearly-contributions > div > div > div > svg > g > g',
 		),
 	);
 
