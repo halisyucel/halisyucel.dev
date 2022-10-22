@@ -10,6 +10,6 @@ Bugünlerde **Next.js** gibi frameworkler üzerinde çalışıyorum. **Jamstack*
 
 ---
 
-Şu sıralar freelance olarak hizmet vermekteyim. Benimle iletişime geçmek için **[isaycel2001@gmail.com](mailto:isaycel2001@gmail.com)** adresini kullanabilirsiniz.
+Şu sıralar **[Atölye15](https://www.atolye15.com)**'de Junior Frontend Developer olarak çalışıyorum.
 
-Aynı zamanda Gazi Üniversitesi Tıp Fakültesi 3.sınıf öğrencisiyim.
+Aynı zamanda Hacettepe Üniversitesi Bilgisayar Mühendisliği birinci sınıf öğrencisiyim. 🎓

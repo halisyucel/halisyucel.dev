@@ -8,7 +8,7 @@ import { NextPage } from 'next';
 import { GetStaticProps } from 'next';
 import { useRouter } from 'next/router';
 import React from 'react';
-import {AiFillGithub, AiFillLinkedin, AiFillMediumCircle} from 'react-icons/ai';
+import { AiFillGithub, AiFillLinkedin, AiFillMediumCircle } from 'react-icons/ai';
 import ReactMarkdown from 'react-markdown';
 
 export interface AboutProps {
@@ -43,9 +43,21 @@ const About: NextPage<AboutProps> = ({ data }) => {
 				}
 			>
 				{[
-					{ href: process.env.NEXT_PUBLIC_GITHUB_URL, element: <AiFillGithub className={'text-2xl mr-1.5'} />, label: 'GitHub' },
-					{ href: process.env.NEXT_PUBLIC_MEDIUM_URL, element: <AiFillMediumCircle className={'text-2xl mr-1.5'} />, label: 'Medium' },
-					{ href: process.env.NEXT_PUBLIC_LINKEDIN_URL, element: <AiFillLinkedin className={'text-2xl mr-1.5'} />, label: 'Linkedin' }
+					{
+						href: process.env.NEXT_PUBLIC_GITHUB_URL,
+						element: <AiFillGithub className={'text-2xl mr-1.5'} />,
+						label: 'GitHub',
+					},
+					{
+						href: process.env.NEXT_PUBLIC_MEDIUM_URL,
+						element: <AiFillMediumCircle className={'text-2xl mr-1.5'} />,
+						label: 'Medium',
+					},
+					{
+						href: process.env.NEXT_PUBLIC_LINKEDIN_URL,
+						element: <AiFillLinkedin className={'text-2xl mr-1.5'} />,
+						label: 'Linkedin',
+					},
 				].map((item) => (
 					<a
 						key={item.label}
