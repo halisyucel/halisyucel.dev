@@ -1,15 +1,15 @@
+import { GetStaticProps, NextPage } from 'next';
+import { useRouter } from 'next/router';
+import React from 'react';
+import { AiFillGithub, AiFillLinkedin, AiFillMediumCircle } from 'react-icons/ai';
+import ReactMarkdown from 'react-markdown';
+
 import Command from '../components/command';
 import GithubActivity from '../components/github-activity';
 import Layout from '../components/layout';
 import Title from '../components/title';
 import { getAboutData } from '../utils/about';
 import texts, { Locale } from '../utils/texts';
-import { NextPage } from 'next';
-import { GetStaticProps } from 'next';
-import { useRouter } from 'next/router';
-import React from 'react';
-import { AiFillGithub, AiFillLinkedin, AiFillMediumCircle } from 'react-icons/ai';
-import ReactMarkdown from 'react-markdown';
 
 export interface AboutProps {
 	data: string;
@@ -24,7 +24,7 @@ const About: NextPage<AboutProps> = ({ data }) => {
 			<Command className={'mt-2'} location={'~/about'} />
 			<div
 				className={
-					'hidden w-full h-[280px] rounded-2xl bg-cover bg-no-repeat bg-center mt-6 xs:block'
+					'mt-6 hidden h-[280px] w-full rounded-2xl bg-cover bg-center bg-no-repeat xs:block'
 				}
 				style={{
 					backgroundImage: 'url(/pp.jpeg)',
@@ -32,30 +32,30 @@ const About: NextPage<AboutProps> = ({ data }) => {
 			/>
 			<div
 				className={
-					'markdown-content font-source-sans mb-6 pb-7 border-b-[1px] border-slate-600/10 xs:border-y-[1px]'
+					'markdown-content mb-6 border-b-[1px] border-slate-600/10 pb-7 font-source-sans xs:border-y-[1px]'
 				}
 			>
 				<ReactMarkdown>{data}</ReactMarkdown>
 			</div>
 			<div
 				className={
-					'flex mb-8 justify-center items-center pb-6 border-b-[1px] border-slate-600/10'
+					'mb-8 flex items-center justify-center border-b-[1px] border-slate-600/10 pb-6'
 				}
 			>
 				{[
 					{
 						href: process.env.NEXT_PUBLIC_GITHUB_URL,
-						element: <AiFillGithub className={'text-2xl mr-1.5'} />,
+						element: <AiFillGithub className={'mr-1.5 text-2xl'} />,
 						label: 'GitHub',
 					},
 					{
 						href: process.env.NEXT_PUBLIC_MEDIUM_URL,
-						element: <AiFillMediumCircle className={'text-2xl mr-1.5'} />,
+						element: <AiFillMediumCircle className={'mr-1.5 text-2xl'} />,
 						label: 'Medium',
 					},
 					{
 						href: process.env.NEXT_PUBLIC_LINKEDIN_URL,
-						element: <AiFillLinkedin className={'text-2xl mr-1.5'} />,
+						element: <AiFillLinkedin className={'mr-1.5 text-2xl'} />,
 						label: 'Linkedin',
 					},
 				].map((item) => (
@@ -65,7 +65,7 @@ const About: NextPage<AboutProps> = ({ data }) => {
 						target={'_blank'}
 						rel={'noopener noreferrer'}
 						className={
-							'cursor-pointer text-black font-source-sans flex items-center text-lg mr-6 last:mr-0'
+							'mr-6 flex cursor-pointer items-center font-source-sans text-lg text-black last:mr-0'
 						}
 					>
 						{item.element} {item.label}

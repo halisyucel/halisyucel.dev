@@ -1,5 +1,3 @@
-import { ProjectData } from '../utils/projects';
-import texts, { Locale } from '../utils/texts';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { BiMailSend } from 'react-icons/bi';
@@ -8,30 +6,33 @@ import { FiExternalLink, FiGithub } from 'react-icons/fi';
 import { MdMobileFriendly } from 'react-icons/md';
 import {
 	SiEslint,
+	SiGoogletranslate,
 	SiJavascript,
 	SiJsonwebtokens,
 	SiMysql,
 	SiNextdotjs,
 	SiPrettier,
+	SiPwa,
 	SiReact,
+	SiReacttable,
+	SiRedis,
 	SiRedux,
 	SiStrapi,
 	SiTailwindcss,
 	SiTypescript,
-	SiPwa,
-	SiReacttable,
-	SiGoogletranslate,
-	SiRedis,
 	SiVite,
 } from 'react-icons/si';
 import { IconButton } from 'rsuite';
 
+import { ProjectData } from '../utils/projects';
+import texts, { Locale } from '../utils/texts';
+
 const getIconsForProject = (iconName: string) => {
 	switch (iconName) {
 		case 'javascript':
-			return <SiJavascript className={'text-yellow-400 bg-black'} />;
+			return <SiJavascript className={'bg-black text-yellow-400'} />;
 		case 'typescript':
-			return <SiTypescript className={'text-blue-500 bg-white'} />;
+			return <SiTypescript className={'bg-white text-blue-500'} />;
 		case 'react':
 			return <SiReact className={'text-blue-600'} />;
 		case 'redux':
@@ -85,16 +86,16 @@ const Project: React.FC<ProjectData> = ({
 	const t = texts(router.locale as Locale);
 	return (
 		<div className={'mb-4'}>
-			<div className={'flex justify-start items-center md:flex-col md:items-start'}>
+			<div className={'flex items-center justify-start md:flex-col md:items-start'}>
 				<div className={'flex flex-col md:mb-2'}>
-					<div className={'flex justify-start items-end flex-wrap'}>
+					<div className={'flex flex-wrap items-end justify-start'}>
 						{demo ? (
 							<a
 								href={demo}
 								target={'_blank'}
 								rel={'noopener noreferrer'}
 								className={
-									'font-source-sans font-extrabold text-3xl text-black underline hover:text-black focus:text-black'
+									'font-source-sans text-3xl font-extrabold text-black underline hover:text-black focus:text-black'
 								}
 							>
 								{title}
@@ -102,7 +103,7 @@ const Project: React.FC<ProjectData> = ({
 						) : (
 							<h2
 								className={
-									'font-source-sans font-extrabold text-3xl text-black underline'
+									'font-source-sans text-3xl font-extrabold text-black underline'
 								}
 							>
 								{title}
@@ -111,20 +112,20 @@ const Project: React.FC<ProjectData> = ({
 						{hasPWASupport && (
 							<span
 								className={
-									'block bg-white px-3 py-0.5 text-2xl rounded-xl ml-4 mb-0.5 text-real-black md:hidden'
+									'ml-4 mb-0.5 block rounded-xl bg-white px-3 py-0.5 text-2xl text-real-black md:hidden'
 								}
 							>
 								<SiPwa />
 							</span>
 						)}
 					</div>
-					<h3 className={'font-source-sans font-normal text-sm'}>
+					<h3 className={'font-source-sans text-sm font-normal'}>
 						{subtitle[router.locale as Locale]}
 					</h3>
 				</div>
 				<span className={'flex-1'} />
-				<span className={'flex font-source-sans font-normal text-sm md:mb-1'}>
-					<span className={'text-lg mr-2'}>{getIconsForProject(lang.toLowerCase())}</span>
+				<span className={'flex font-source-sans text-sm font-normal md:mb-1'}>
+					<span className={'mr-2 text-lg'}>{getIconsForProject(lang.toLowerCase())}</span>
 					{router.locale === 'tr' ? (
 						<React.Fragment>
 							<b>{lang}</b>&nbsp;{t.pages.projects.project.writtenWith}
@@ -137,10 +138,10 @@ const Project: React.FC<ProjectData> = ({
 				</span>
 			</div>
 			<div
-				className={'font-source-sans font-normal text-sm mt-1.5 border-l-[1px] pl-2'}
+				className={'mt-1.5 border-l-[1px] pl-2 font-source-sans text-sm font-normal'}
 				dangerouslySetInnerHTML={{ __html: description[router.locale as Locale] }}
 			/>
-			<div className={'flex mt-2 justify-start items-center flex-wrap md:mt-4'}>
+			<div className={'mt-2 flex flex-wrap items-center justify-start md:mt-4'}>
 				{demo && (
 					<a
 						href={demo}
@@ -161,22 +162,22 @@ const Project: React.FC<ProjectData> = ({
 						<IconButton size={'sm'} appearance={'primary'} icon={<FiGithub />} />
 					</a>
 				)}
-				<span className={'h-6 w-[1px] bg-black/25 mr-2 mb-2'} />
+				<span className={'mr-2 mb-2 h-6 w-[1px] bg-black/25'} />
 				{technologies.map((tech, index) => {
 					if (tech === '|') {
-						return <span key={index} className={'h-6 w-[1px] bg-black/25 mr-2 mb-2'} />;
+						return <span key={index} className={'mr-2 mb-2 h-6 w-[1px] bg-black/25'} />;
 					}
 					const icon = getIconsForProject(tech.toLocaleLowerCase());
 					return (
 						<span
 							key={index}
 							className={
-								'bg-white h-[28px] px-2.5 mr-2 mb-2 rounded-lg flex justify-center items-center'
+								'mr-2 mb-2 flex h-[28px] items-center justify-center rounded-lg bg-white px-2.5'
 							}
 						>
 							{icon}
 							<span
-								className={`font-mono text-black text-xs ${
+								className={`font-mono text-xs text-black ${
 									icon === null ? '' : 'ml-1.5 '
 								}`}
 							>

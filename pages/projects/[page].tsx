@@ -1,6 +1,7 @@
+import { GetStaticPaths, GetStaticProps } from 'next';
+
 import { getProjectsData } from '../../utils/projects';
 import Projects from './index';
-import { GetStaticProps, GetStaticPaths } from 'next';
 
 const getStaticPaths: GetStaticPaths = async ({ locales }) => {
 	const { meta } = getProjectsData({ page: 1 });

@@ -1,8 +1,9 @@
-import { Activity } from '../pages/api/getGithubActivity';
 import axios from 'axios';
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { FaCode } from 'react-icons/fa';
-import { Popover, Whisper, Loader } from 'rsuite';
+import { Loader, Popover, Whisper } from 'rsuite';
+
+import { Activity } from '../pages/api/getGithubActivity';
 
 const emptyActivities: Activity[][] = Array.from({ length: 53 }).map(() => {
 	return Array.from({ length: 7 }).map(() => ({ date: '', value: 0, level: 0 }));
@@ -39,16 +40,16 @@ const GithubActivity = () => {
 	return (
 		<div
 			className={
-				'w-full h-[200px] mb-8 border-[1px] border-slate-600/10 rounded-xl px-8 flex flex-col justify-center items-start sm:px-6'
+				'mb-8 flex h-[200px] w-full flex-col items-start justify-center rounded-xl border-[1px] border-slate-600/10 px-8 sm:px-6'
 			}
 		>
 			{isLoading ? (
-				<div className={'w-full h-full flex items-center justify-center'}>
+				<div className={'flex h-full w-full items-center justify-center'}>
 					<Loader size={'lg'} />
 				</div>
 			) : (
 				<React.Fragment>
-					<div className={'w-full flex justify-between items-center mb-3 mt-2'}>
+					<div className={'mb-3 mt-2 flex w-full items-center justify-between'}>
 						<h2 className={'font-source-sans text-base font-normal'}>{title}</h2>
 						<a
 							href={`${process.env.NEXT_PUBLIC_GITHUB_URL}?tab=repositories`}
@@ -59,15 +60,15 @@ const GithubActivity = () => {
 							<FaCode />
 						</a>
 					</div>
-					<div ref={scrollArea} className={'w-full relative h-[136px] overflow-x-scroll'}>
-						<div className={'w-full flex absolute inset-0'}>
+					<div ref={scrollArea} className={'relative h-[136px] w-full overflow-x-scroll'}>
+						<div className={'absolute inset-0 flex w-full'}>
 							{activities.map((week, index) => (
 								<div key={index} className={'mr-1'}>
 									{week.map((day, index) => (
 										<span
 											key={`${day}-${index}`}
 											className={
-												'block box-content h-3 w-3 border-[0.25px] border-black/10 bg-gray mb-1 last:mb-0'
+												'mb-1 box-content block h-3 w-3 border-[0.25px] border-black/10 bg-gray last:mb-0'
 											}
 										>
 											{day.value !== 0 && (

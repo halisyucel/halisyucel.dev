@@ -1,8 +1,8 @@
 import React from 'react';
 import {
 	BsChevronDoubleLeft,
-	BsChevronLeft,
 	BsChevronDoubleRight,
+	BsChevronLeft,
 	BsChevronRight,
 } from 'react-icons/bs';
 import { Button, IconButton } from 'rsuite';
@@ -24,12 +24,12 @@ interface PaginationButtonProps {
 const PaginationButton: React.FC<PaginationButtonProps> = ({ type, value, isCurrent, onClick }) => {
 	return (
 		<label
-			className={'font-source-sans mr-2 last:mr-0'}
+			className={'mr-2 font-source-sans last:mr-0'}
 			onClick={() => !isCurrent && onClick(value)}
 		>
 			{type === 'page' && (
 				<Button size={'sm'} appearance={isCurrent ? 'primary' : 'default'}>
-					<span className={'font-extrabold h-[30px]'}>{value}</span>
+					<span className={'h-[30px] font-extrabold'}>{value}</span>
 				</Button>
 			)}
 			{type === 'prev' && <IconButton size={'sm'} icon={<BsChevronLeft />} />}

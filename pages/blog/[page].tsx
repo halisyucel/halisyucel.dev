@@ -1,6 +1,7 @@
+import { GetStaticPaths, GetStaticProps } from 'next';
+
 import { getBlogData } from '../../utils/blog';
 import Blog from './index';
-import { GetStaticProps, GetStaticPaths } from 'next';
 
 const getStaticPaths: GetStaticPaths = async ({ locales }) => {
 	const { meta } = getBlogData({ page: 1 });

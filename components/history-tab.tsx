@@ -1,10 +1,11 @@
-import { closeTab, HistoryTab as HistoryTabProps } from '../redux/features/history';
-import { RootState } from '../redux/store';
 import { useRouter } from 'next/router';
 import React, { useCallback } from 'react';
 import { FaReact } from 'react-icons/fa';
 import { RiCloseCircleFill } from 'react-icons/ri';
 import { useDispatch, useSelector } from 'react-redux';
+
+import { closeTab, HistoryTab as HistoryTabProps } from '../redux/features/history';
+import { RootState } from '../redux/store';
 
 const HistoryTab: React.FC<HistoryTabProps> = ({ name, path, isOpen }) => {
 	const { tabs } = useSelector((state: RootState) => state.history);
@@ -29,7 +30,7 @@ const HistoryTab: React.FC<HistoryTabProps> = ({ name, path, isOpen }) => {
 	}, [dispatch, router, tabs, name, isOpen]);
 	return (
 		<div
-			className={`group relative text-xs font-source-sans px-2 py-1 bg-white mr-2 rounded-lg cursor-pointer flex justify-center items-center ${
+			className={`group relative mr-2 flex cursor-pointer items-center justify-center rounded-lg bg-white px-2 py-1 font-source-sans text-xs ${
 				isOpen ? 'shadow-tab' : ''
 			}`}
 			onClick={handleClick}
@@ -37,7 +38,7 @@ const HistoryTab: React.FC<HistoryTabProps> = ({ name, path, isOpen }) => {
 			<FaReact className={'mr-1 text-blue-500'} />
 			{name}
 			<span
-				className={`hidden ml-1 mt-[1px] hover:text-red-500 ${
+				className={`ml-1 mt-[1px] hidden hover:text-red-500 ${
 					tabs.length !== 1 ? 'group-hover:block' : ''
 				}`}
 				onClick={() => handleClose()}

@@ -11,7 +11,7 @@ const ToggleLang = () => {
 			<Button size={'xs'} className={'group'}>
 				<span
 					className={
-						'flex justify-center items-center font-extrabold group-hover:text-green-600'
+						'flex items-center justify-center font-extrabold group-hover:text-green-600'
 					}
 				>
 					<BiWorld className={'mr-1'} />

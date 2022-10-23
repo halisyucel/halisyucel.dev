@@ -1,8 +1,7 @@
 import { useRouter } from 'next/router';
 import React, { useState } from 'react';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
-import { BiMailSend } from 'react-icons/bi';
-import { BiCopy } from 'react-icons/bi';
+import { BiCopy, BiMailSend } from 'react-icons/bi';
 import { IconButton } from 'rsuite';
 
 interface MailBoxProps {
@@ -14,7 +13,7 @@ const MailBox: React.FC<MailBoxProps> = ({ value }) => {
 	const [hover, setHover] = useState<boolean>(false);
 	return (
 		<span
-			className={'relative font-extrabold cursor-pointer'}
+			className={'relative cursor-pointer font-extrabold'}
 			onMouseEnter={() => setHover(true)}
 			onMouseLeave={() => setHover(false)}
 		>
@@ -22,7 +21,7 @@ const MailBox: React.FC<MailBoxProps> = ({ value }) => {
 			<span
 				className={`${
 					hover ? 'inline' : 'hidden'
-				} absolute bottom-[-36px] left-[calc(50%-34px)] p-1 bg-bg-primary rounded-lg`}
+				} absolute bottom-[-36px] left-[calc(50%-34px)] rounded-lg bg-bg-primary p-1`}
 			>
 				<IconButton
 					size={'sm'}

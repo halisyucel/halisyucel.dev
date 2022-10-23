@@ -1,18 +1,19 @@
+import axios from 'axios';
+import { NextPage } from 'next';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import React, { useCallback, useMemo, useRef, useState } from 'react';
+import { ReCAPTCHA } from 'react-google-recaptcha';
+import { Button, Input, Message } from 'rsuite';
+import { TypeAttributes } from 'rsuite/esm/@types/common';
+
 import Command from '../components/command';
 import Label from '../components/label';
 import Layout from '../components/layout';
 import MailBox from '../components/mail-box';
 import Title from '../components/title';
-import { createErrorText, ContactFormSchema } from '../utils/contact';
+import { ContactFormSchema, createErrorText } from '../utils/contact';
 import texts, { Locale } from '../utils/texts';
-import axios from 'axios';
-import { NextPage } from 'next';
-import { useRouter } from 'next/router';
-import React, { useCallback, useMemo, useState, useRef } from 'react';
-import ReCAPTCHA from 'react-google-recaptcha';
-import { Helmet } from 'react-helmet';
-import { Button, Input, Message } from 'rsuite';
-import { TypeAttributes } from 'rsuite/esm/@types/common';
 
 interface ResultProps {
 	type: TypeAttributes.Status | undefined;
@@ -101,14 +102,14 @@ const Contact: NextPage = () => {
 	);
 	return (
 		<Layout>
-			<Helmet>
+			<Head>
 				<title>halis yücel | {t.pages.contact.headTitle}</title>
-			</Helmet>
+			</Head>
 			<Title value={t.pages.contact.title} />
 			<Command className={'mt-2'} location={'~/contact'} />
 			<p
 				className={
-					'text-lg font-source-sans pb-4 mb-4 font-light border-b-2 border-gray flex flex-wrap'
+					'mb-4 flex flex-wrap border-b-2 border-gray pb-4 font-source-sans text-lg font-light'
 				}
 			>
 				{t.pages.contact.text.part_1}&nbsp;
@@ -160,7 +161,7 @@ const Contact: NextPage = () => {
 						/>
 					</Label>
 				</div>
-				<div className={'flex mb-4'}>
+				<div className={'mb-4 flex'}>
 					<Button
 						size={'sm'}
 						type={'submit'}

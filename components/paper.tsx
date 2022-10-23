@@ -6,7 +6,7 @@ interface PaperProps {
 }
 
 const Paper: React.FC<PaperProps> = ({ children, className = '' }) => {
-	return <div className={`bg-bg-secondary p-5 rounded-2xl ${className}`}>{children}</div>;
+	return <div className={`rounded-2xl bg-bg-secondary p-5 ${className}`}>{children}</div>;
 };
 
 export default Paper;

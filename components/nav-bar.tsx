@@ -1,32 +1,33 @@
-import texts, { Locale } from '../utils/texts';
-import Paper from './paper';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';
-import { AiFillGithub, AiFillMediumCircle, AiFillLinkedin } from 'react-icons/ai';
+import { AiFillGithub, AiFillLinkedin, AiFillMediumCircle } from 'react-icons/ai';
+
+import texts, { Locale } from '../utils/texts';
+import Paper from './paper';
 
 const NavBar = () => {
 	const { locale } = useRouter();
 	const t = texts(locale as Locale);
 	return (
-		<Paper className={'w-[320px] mr-10 lg:hidden'}>
+		<Paper className={'mr-10 w-[320px] lg:hidden'}>
 			<nav className={'relative h-full pb-10'}>
 				<div
-					className={'w-full h-[280px] rounded-2xl bg-cover bg-no-repeat bg-center'}
+					className={'h-[280px] w-full rounded-2xl bg-cover bg-center bg-no-repeat'}
 					style={{
 						backgroundImage: 'url(/pp.jpeg)',
 					}}
 				/>
 				<h1
 					className={
-						'font-source-sans leading-none mt-4 pt-2 border-t-2 border-gray text-black'
+						'mt-4 border-t-2 border-gray pt-2 font-source-sans leading-none text-black'
 					}
 				>
 					Halis Yücel
 				</h1>
 				<p
 					className={
-						'font-source-sans text-xl ml-0.5 mb-2 pb-2 border-b-2 border-gray text-black'
+						'ml-0.5 mb-2 border-b-2 border-gray pb-2 font-source-sans text-xl text-black'
 					}
 				>
 					halisyucel
@@ -49,7 +50,7 @@ const NavBar = () => {
 				</ul>
 				<ul
 					className={
-						'absolute w-full left-0 bottom-0 flex text-[28px] pt-2 ml-0.5 mb-0 border-t-2 border-gray'
+						'absolute left-0 bottom-0 ml-0.5 mb-0 flex w-full border-t-2 border-gray pt-2 text-[28px]'
 					}
 				>
 					{[

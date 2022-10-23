@@ -1,11 +1,12 @@
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import React, { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+
 import { RootState } from '../redux/store';
 import texts, { Locale } from '../utils/texts';
 import Content from './content';
 import NavBar from './nav-bar';
-import { useRouter } from 'next/router';
-import React, { useEffect } from 'react';
-import { Helmet } from 'react-helmet';
-import { useSelector } from 'react-redux';
 
 interface LayoutProps {
 	children: React.ReactNode;
@@ -21,7 +22,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 	}, [theme]);
 	return (
 		<React.Fragment>
-			<Helmet>
+			<Head>
 				<title>halis yücel</title>
 				<meta charSet="UTF-8" />
 				<meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -40,7 +41,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
 				<meta name="twitter:card" content="app" />
 				<meta name="twitter:title" content={'Halis Yücel'} />
 				<meta name="twitter:description" content={t.meta.description} />
-			</Helmet>
+			</Head>
 			<NavBar />
 			<Content>{children}</Content>
 		</React.Fragment>

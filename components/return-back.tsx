@@ -1,7 +1,8 @@
-import { routesToBack } from '../utils/helper';
 import { useRouter } from 'next/router';
 import React, { useCallback, useEffect, useState } from 'react';
 import { Button } from 'rsuite';
+
+import { routesToBack } from '../utils/helper';
 
 interface ReturnBackProps {
 	className?: string;

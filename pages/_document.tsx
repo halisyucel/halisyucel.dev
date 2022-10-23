@@ -1,11 +1,11 @@
-import { Html, Head, Main, NextScript } from 'next/document';
+import { Head, Html, Main, NextScript } from 'next/document';
 import React from 'react';
 
 export default function Document() {
 	return (
 		<Html>
 			<Head />
-			<body className={'min-h-[100vh] h-[100vh] p-10 md:p-4'}>
+			<body className={'h-[100vh] min-h-[100vh] p-10 md:p-4'}>
 				<Main />
 				<NextScript />
 			</body>

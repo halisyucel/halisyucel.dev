@@ -1,15 +1,15 @@
+import { NextPage } from 'next';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import React from 'react';
+
 import Command from '../../components/command';
 import Layout from '../../components/layout';
 import Pagination from '../../components/pagination';
 import Project from '../../components/project';
 import Title from '../../components/title';
 import { getProjectsData, ProjectData } from '../../utils/projects';
-import texts from '../../utils/texts';
-import { Locale } from '../../utils/texts';
-import { NextPage } from 'next';
-import { useRouter } from 'next/router';
-import React from 'react';
-import { Helmet } from 'react-helmet';
+import texts, { Locale } from '../../utils/texts';
 
 interface ProjectsProps {
 	data: ProjectData[];
@@ -25,9 +25,9 @@ const Projects: NextPage<ProjectsProps> = ({ data, meta }) => {
 	const t = texts(router.locale as Locale);
 	return (
 		<Layout>
-			<Helmet>
+			<Head>
 				<title>halis yücel | {t.pages.projects.headTitle}</title>
-			</Helmet>
+			</Head>
 			<Title value={t.pages.projects.title} />
 			<Command className={'mt-2'} location={'~/projects'} />
 			<div className={'mt-4'}>
@@ -46,7 +46,7 @@ const Projects: NextPage<ProjectsProps> = ({ data, meta }) => {
 					/>
 				))}
 			</div>
-			<div className={'py-4 mt-2 w-full flex justify-center items-center'}>
+			<div className={'mt-2 flex w-full items-center justify-center py-4'}>
 				<Pagination
 					currentPage={meta.currentPage}
 					pageSize={meta.pageSize}

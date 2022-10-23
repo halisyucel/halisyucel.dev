@@ -1,15 +1,16 @@
-import { HistoryTab as HistoryTabProps } from '../redux/features/history';
-import { RootState } from '../redux/store';
-import texts, { Locale } from '../utils/texts';
-import HistoryTab from './history-tab';
 import confetti from 'canvas-confetti';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React, { useCallback, useState } from 'react';
-import { FaPlay, FaBug } from 'react-icons/fa';
+import { FaBug, FaPlay } from 'react-icons/fa';
 import { GoThreeBars } from 'react-icons/go';
 import { useSelector } from 'react-redux';
 import { IconButton } from 'rsuite';
+
+import { HistoryTab as HistoryTabProps } from '../redux/features/history';
+import { RootState } from '../redux/store';
+import texts, { Locale } from '../utils/texts';
+import HistoryTab from './history-tab';
 
 const TopBar = () => {
 	const { locale } = useRouter();
@@ -30,14 +31,14 @@ const TopBar = () => {
 		};
 
 		const interval: number = window.setInterval(function () {
-			let timeLeft = animationEnd - Date.now();
+			const timeLeft = animationEnd - Date.now();
 
 			if (timeLeft <= 0) {
 				setIsConfettiActive(false);
 				return window.clearInterval(interval);
 			}
 
-			let particleCount = 50 * (timeLeft / duration);
+			const particleCount = 50 * (timeLeft / duration);
 
 			confetti(
 				Object.assign({}, defaults, {
@@ -59,19 +60,19 @@ const TopBar = () => {
 		<React.Fragment>
 			<div
 				className={
-					'flex justify-center items-center bg-bg-secondary w-full h-10 border-b-2 border-gray'
+					'flex h-10 w-full items-center justify-center border-b-2 border-gray bg-bg-secondary'
 				}
 			>
 				<button
 					onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
 					className={
-						'text-xs px-2 py-1 bg-white mr-2 rounded-lg cursor-pointer hidden justify-center items-center lg:flex hover:shadow-tab'
+						'mr-2 hidden cursor-pointer items-center justify-center rounded-lg bg-white px-2 py-1 text-xs hover:shadow-tab lg:flex'
 					}
 				>
-					<GoThreeBars className={'text-teal-500 h-[16px]'} />
+					<GoThreeBars className={'h-[16px] text-teal-500'} />
 				</button>
 				<ul
-					className={`fixed z-10 lg:left-16 lg:top-[5.5rem] md:left-9 md:top-16 p-2 bg-white rounded-lg shadow-tab ${
+					className={`fixed z-10 rounded-lg bg-white p-2 shadow-tab lg:left-16 lg:top-[5.5rem] md:left-9 md:top-16 ${
 						isMobileMenuOpen ? 'block' : 'hidden'
 					}`}
 				>
@@ -85,7 +86,7 @@ const TopBar = () => {
 							<Link href={item.href}>
 								<a
 									className={
-										'block font-source-sans font-extrabold text-sm text-black'
+										'block font-source-sans text-sm font-extrabold text-black'
 									}
 								>
 									{item.label}
@@ -118,15 +119,15 @@ const TopBar = () => {
 				/>
 			</div>
 			<div
-				className={`flex justify-center fixed inset-0 w-screen h-screen bg-black/60 z-10 ${
+				className={`fixed inset-0 z-10 flex h-screen w-screen justify-center bg-black/60 ${
 					isDebuggerOpen ? 'visible' : 'hidden'
 				}`}
 			>
-				<div className={'h-6 mt-4 px-2 flex border-[0.5px] border-gray-500 bg-amber-100'}>
+				<div className={'border-gray-500 mt-4 flex h-6 border-[0.5px] bg-amber-100 px-2'}>
 					Paused in debugger
 					<span
 						onClick={() => setIsDebuggerOpen(false)}
-						className={'flex items-center h-full ml-2 cursor-pointer'}
+						className={'ml-2 flex h-full cursor-pointer items-center'}
 					>
 						<FaPlay className={'text-xs text-teal-500'} />
 					</span>

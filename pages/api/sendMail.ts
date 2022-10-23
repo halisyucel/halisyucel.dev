@@ -1,11 +1,12 @@
-import { ContactFormSchema } from '../../utils/contact';
 import sgMail from '@sendgrid/mail';
 import axios from 'axios';
 import { NextApiRequest, NextApiResponse } from 'next';
 
+import { ContactFormSchema } from '../../utils/contact';
+
 sgMail.setApiKey(process.env.SENDGRID_SECRET_KEY as string);
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const sendMail = async (req: NextApiRequest, res: NextApiResponse) => {
 	const { error, value } = ContactFormSchema.validate(req.body);
 	if (error) return res.status(400).json({ message: error.message });
 	const response = await axios({
@@ -29,3 +30,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 	});
 	return res.status(200).json({ status: true });
 };
+
+export default sendMail;

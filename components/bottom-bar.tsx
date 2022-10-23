@@ -1,8 +1,9 @@
-import ReturnBack from './return-back';
-import ToggleLang from './toggle-lang';
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BiGitBranch, BiSitemap } from 'react-icons/bi';
 import { Tag } from 'rsuite';
+
+import ReturnBack from './return-back';
+import ToggleLang from './toggle-lang';
 
 const BottomBar = () => {
 	const [positions, setPositions] = useState<number[]>([0, 0]);
@@ -18,7 +19,7 @@ const BottomBar = () => {
 	return (
 		<div
 			className={
-				'flex justify-center items-center bg-bg-secondary w-full h-10 border-t-2 border-gray'
+				'flex h-10 w-full items-center justify-center border-t-2 border-gray bg-bg-secondary'
 			}
 		>
 			<ReturnBack className={'mr-[10px] sm:!hidden'} />
@@ -36,7 +37,7 @@ const BottomBar = () => {
 				target={'_blank'}
 				rel={'noopener noreferrer'}
 			>
-				<span className={'flex justify-center items-center'}>
+				<span className={'flex items-center justify-center'}>
 					<BiSitemap className={'h-[20px]'} />
 					<span className={'md:hidden'}>&nbsp;sitemap</span>
 				</span>
@@ -48,7 +49,7 @@ const BottomBar = () => {
 				target={'_blank'}
 				rel={'noopener noreferrer'}
 			>
-				<span className={'flex justify-center items-center'}>
+				<span className={'flex items-center justify-center'}>
 					<BiGitBranch className={'h-[20px]'} />
 					<span className={'text-green-600 md:hidden'}>&nbsp;main</span>
 				</span>

@@ -1,6 +1,7 @@
+import { GetServerSideProps } from 'next';
+
 import { getBlogData } from '../utils/blog';
 import { getProjectsData } from '../utils/projects';
-import { GetServerSideProps } from 'next';
 
 export interface Path {
 	url: string;
@@ -8,6 +9,7 @@ export interface Path {
 	priority: number;
 }
 
+// eslint-disable-next-line @typescript-eslint/no-empty-function
 const Sitemap = () => {};
 
 const getServerSideProps: GetServerSideProps = async ({ res }) => {

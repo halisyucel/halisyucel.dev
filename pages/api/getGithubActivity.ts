@@ -30,7 +30,7 @@ const formatDate = (date: string) => {
 	return `${month} ${day}, ${year}`;
 };
 
-export default async (_: NextApiRequest, res: NextApiResponse) => {
+const getGithubActivity = async (_: NextApiRequest, res: NextApiResponse) => {
 	const response = await axios.get('https://github.com/halisyucel');
 	const dom = new JSDOM(response.data);
 	const document = dom.window.document;
@@ -64,3 +64,5 @@ export default async (_: NextApiRequest, res: NextApiResponse) => {
 		activities,
 	});
 };
+
+export default getGithubActivity;
