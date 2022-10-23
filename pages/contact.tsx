@@ -3,7 +3,8 @@ import { NextPage } from 'next';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React, { useCallback, useMemo, useRef, useState } from 'react';
-import { ReCAPTCHA } from 'react-google-recaptcha';
+// eslint-disable-next-line import/no-named-as-default
+import ReCAPTCHA from 'react-google-recaptcha';
 import { Button, Input, Message } from 'rsuite';
 import { TypeAttributes } from 'rsuite/esm/@types/common';
 
