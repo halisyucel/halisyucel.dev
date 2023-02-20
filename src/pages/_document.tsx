@@ -11,8 +11,8 @@ export default class _Document extends Document {
       <Html>
         <Head />
         <body>
-        <Main />
-        <NextScript />
+          <Main />
+          <NextScript />
         </body>
       </Html>
     );
