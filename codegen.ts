@@ -8,6 +8,7 @@ const config: CodegenConfig = {
     'https://graphql.datocms.com/': {
       headers: {
         Authorization: process.env.NEXT_PUBLIC_GRAPHQL_API_KEY as string,
+        'X-Exclude-Invalid': 'true',
       },
     },
   },

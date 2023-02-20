@@ -67,7 +67,7 @@ export enum ArticleModelOrderBy {
 /** Record of type Article (article) */
 export type ArticleRecord = RecordInterface & {
   __typename?: 'ArticleRecord';
-  _allTitleLocales?: Maybe<Array<StringMultiLocaleField>>;
+  _allTitleLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
   _createdAt: Scalars['DateTime'];
   _firstPublishedAt?: Maybe<Scalars['DateTime']>;
   _isValid: Scalars['BooleanType'];
@@ -80,7 +80,7 @@ export type ArticleRecord = RecordInterface & {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>;
   _updatedAt: Scalars['DateTime'];
   id: Scalars['ItemId'];
-  title?: Maybe<Scalars['String']>;
+  title: Scalars['String'];
 };
 
 
@@ -329,16 +329,16 @@ export type HomeModelAboutField = {
   value: Scalars['JsonField'];
 };
 
-export type HomeModelAboutFieldMultiLocaleField = {
-  __typename?: 'HomeModelAboutFieldMultiLocaleField';
+export type HomeModelAboutFieldNonNullMultiLocaleField = {
+  __typename?: 'HomeModelAboutFieldNonNullMultiLocaleField';
   locale?: Maybe<SiteLocale>;
-  value?: Maybe<HomeModelAboutField>;
+  value: HomeModelAboutField;
 };
 
 /** Record of type Home (home) */
 export type HomeRecord = RecordInterface & {
   __typename?: 'HomeRecord';
-  _allAboutLocales?: Maybe<Array<HomeModelAboutFieldMultiLocaleField>>;
+  _allAboutLocales?: Maybe<Array<HomeModelAboutFieldNonNullMultiLocaleField>>;
   _createdAt: Scalars['DateTime'];
   _firstPublishedAt?: Maybe<Scalars['DateTime']>;
   _isValid: Scalars['BooleanType'];
@@ -350,7 +350,7 @@ export type HomeRecord = RecordInterface & {
   _status: ItemStatus;
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>;
   _updatedAt: Scalars['DateTime'];
-  about?: Maybe<HomeModelAboutField>;
+  about: HomeModelAboutField;
   id: Scalars['ItemId'];
 };
 
@@ -1744,6 +1744,24 @@ export type InUseFilter = {
   eq?: InputMaybe<Scalars['BooleanType']>;
 };
 
+/** Specifies how to filter Integer fields */
+export type IntegerFilter = {
+  /** Search for records with an exact match */
+  eq?: InputMaybe<Scalars['IntType']>;
+  /** Filter records with the specified field defined (i.e. with any value) or not */
+  exists?: InputMaybe<Scalars['BooleanType']>;
+  /** Filter records with a value that's strictly greater than the one specified */
+  gt?: InputMaybe<Scalars['IntType']>;
+  /** Filter records with a value that's greater than or equal to the one specified */
+  gte?: InputMaybe<Scalars['IntType']>;
+  /** Filter records with a value that's less than the one specified */
+  lt?: InputMaybe<Scalars['IntType']>;
+  /** Filter records with a value that's less or equal than the one specified */
+  lte?: InputMaybe<Scalars['IntType']>;
+  /** Exclude records with an exact match */
+  neq?: InputMaybe<Scalars['IntType']>;
+};
+
 /** Specifies how to filter by ID */
 export type ItemIdFilter = {
   /** Search the record with the specified ID */
@@ -1774,6 +1792,7 @@ export type LinkModelFilter = {
   _updatedAt?: InputMaybe<UpdatedAtFilter>;
   id?: InputMaybe<ItemIdFilter>;
   linkType?: InputMaybe<StringFilter>;
+  orderNumber?: InputMaybe<IntegerFilter>;
   url?: InputMaybe<StringFilter>;
 };
 
@@ -1798,6 +1817,8 @@ export enum LinkModelOrderBy {
   IdDesc = 'id_DESC',
   LinkTypeAsc = 'linkType_ASC',
   LinkTypeDesc = 'linkType_DESC',
+  OrderNumberAsc = 'orderNumber_ASC',
+  OrderNumberDesc = 'orderNumber_DESC',
   UrlAsc = 'url_ASC',
   UrlDesc = 'url_DESC'
 }
@@ -1817,8 +1838,9 @@ export type LinkRecord = RecordInterface & {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>;
   _updatedAt: Scalars['DateTime'];
   id: Scalars['ItemId'];
-  linkType?: Maybe<Scalars['String']>;
-  url?: Maybe<Scalars['String']>;
+  linkType: Scalars['String'];
+  orderNumber?: Maybe<Scalars['IntType']>;
+  url: Scalars['String'];
 };
 
 
@@ -1885,7 +1907,7 @@ export enum ProjectModelOrderBy {
 /** Record of type Project (project) */
 export type ProjectRecord = RecordInterface & {
   __typename?: 'ProjectRecord';
-  _allDescriptionLocales?: Maybe<Array<StringMultiLocaleField>>;
+  _allDescriptionLocales?: Maybe<Array<StringNonNullMultiLocaleField>>;
   _createdAt: Scalars['DateTime'];
   _firstPublishedAt?: Maybe<Scalars['DateTime']>;
   _isValid: Scalars['BooleanType'];
@@ -1897,10 +1919,10 @@ export type ProjectRecord = RecordInterface & {
   _status: ItemStatus;
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>;
   _updatedAt: Scalars['DateTime'];
-  description?: Maybe<Scalars['String']>;
+  description: Scalars['String'];
   id: Scalars['ItemId'];
-  name?: Maybe<Scalars['String']>;
-  writtenLanguage?: Maybe<Scalars['String']>;
+  name: Scalars['String'];
+  writtenLanguage: Scalars['String'];
 };
 
 
@@ -2314,10 +2336,10 @@ export type StringMatchesFilter = {
   regexp?: InputMaybe<Scalars['BooleanType']>;
 };
 
-export type StringMultiLocaleField = {
-  __typename?: 'StringMultiLocaleField';
+export type StringNonNullMultiLocaleField = {
+  __typename?: 'StringNonNullMultiLocaleField';
   locale?: Maybe<SiteLocale>;
-  value?: Maybe<Scalars['String']>;
+  value: Scalars['String'];
 };
 
 export type Tag = {
@@ -2713,7 +2735,7 @@ export type FocalPoint = {
 export type GetLinksQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type GetLinksQuery = { __typename?: 'Query', links: Array<{ __typename?: 'LinkRecord', linkType?: string | null, url?: string | null }> };
+export type GetLinksQuery = { __typename?: 'Query', links: Array<{ __typename?: 'LinkRecord', linkType: string, url: string }> };
 
 
-export const GetLinksDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetLinks"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":{"kind":"Name","value":"links"},"name":{"kind":"Name","value":"allLinks"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"linkType"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]} as unknown as DocumentNode<GetLinksQuery, GetLinksQueryVariables>;
+export const GetLinksDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetLinks"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":{"kind":"Name","value":"links"},"name":{"kind":"Name","value":"allLinks"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"orderBy"},"value":{"kind":"EnumValue","value":"orderNumber_ASC"}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"linkType"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]} as unknown as DocumentNode<GetLinksQuery, GetLinksQueryVariables>;
