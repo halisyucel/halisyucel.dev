@@ -1,0 +1,17 @@
+@import url("https://use.typekit.net/aur3wpw.css");
+
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .full-height-without-header {
+    height: calc(100vh - 80px);
+  }
+  .iframe {
+    @apply overflow-hidden rounded-md overflow-auto flex justify-center items-center;
+    height: calc(100vh - 92px);
+    box-shadow: 0 0 0 6px rgb(52, 211, 153, 0.75);
+    margin: 6px;
+    width: 420px;
+  }
+}
