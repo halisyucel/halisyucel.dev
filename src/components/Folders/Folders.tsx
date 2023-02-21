@@ -1,50 +1,24 @@
-import { useQuery } from '@apollo/client';
-import { ActionIcon, Divider, Flex, Skeleton, Stack } from '@mantine/core';
-import { useEffect } from 'react';
+import { Divider, Stack, Text } from '@mantine/core';
 
-import { renderLinkIcon } from '@/components/Folders';
-import { gql } from '@/graphql';
-
-export const GET_LINKS = gql(/* GraphQL */ `
-  query GetLinks {
-    links: allLinks(orderBy: orderNumber_ASC) {
-      linkType
-      url
-    }
-  }
-`);
+import Links from '@/components/Folders/components/Links';
+import NavLinks from '@/components/Folders/components/NavLinks';
+import Tags from '@/components/Folders/components/Tags';
 
 export default function Folders(): JSX.Element {
-  const { loading, data } = useQuery(GET_LINKS);
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
   return (
-    <Stack spacing={0}>
-      <h1 className="my-2.5 font-p22mackinacpro text-white text-7xl">
-        Halis Yücel
-      </h1>
+    <Stack spacing="xs">
+      <Stack spacing={0}>
+        <Text className="text-4xl text-white font-extrabold font-p22mackinacpro mt-1.5">
+          Halis Yücel
+        </Text>
+        <Text className="text-xl font-light text-gray-400">@halisyucel</Text>
+      </Stack>
       <Divider />
-      <Flex gap={5}>
-        {loading
-          ? Array.from({ length: 3 }).map((_, index) => (
-              <Skeleton key={`skeleton-link-${index}`} height={33} width={33} />
-            ))
-          : data?.links.map((link) => (
-              <ActionIcon
-                key={link.linkType}
-                size="lg"
-                variant="filled"
-                color="dark"
-                component={'a'}
-                href={link.url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {renderLinkIcon(link.linkType)}
-              </ActionIcon>
-            ))}
-      </Flex>
+      <Tags />
+      <Divider />
+      <Links />
+      <Divider />
+      <NavLinks />
     </Stack>
   );
 }

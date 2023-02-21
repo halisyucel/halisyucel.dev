@@ -1974,6 +1974,8 @@ export type Query = {
   _allProjectsMeta: CollectionMetadata;
   /** Returns meta information regarding a record collection */
   _allQuotesMeta: CollectionMetadata;
+  /** Returns meta information regarding a record collection */
+  _allTagsMeta: CollectionMetadata;
   /** Returns meta information regarding an assets collection */
   _allUploadsMeta?: Maybe<CollectionMetadata>;
   /** Returns the single instance record */
@@ -1986,6 +1988,8 @@ export type Query = {
   allProjects: Array<ProjectRecord>;
   /** Returns a collection of records */
   allQuotes: Array<QuoteRecord>;
+  /** Returns a collection of records */
+  allTags: Array<TagRecord>;
   /** Returns a collection of assets */
   allUploads: Array<FileField>;
   /** Returns a specific record */
@@ -1998,6 +2002,8 @@ export type Query = {
   project?: Maybe<ProjectRecord>;
   /** Returns a specific record */
   quote?: Maybe<QuoteRecord>;
+  /** Returns a specific record */
+  tag?: Maybe<TagRecord>;
   /** Returns a specific asset */
   upload?: Maybe<FileField>;
 };
@@ -2031,6 +2037,14 @@ export type Query_AllProjectsMetaArgs = {
 export type Query_AllQuotesMetaArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   filter?: InputMaybe<QuoteModelFilter>;
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** The query root for this schema */
+export type Query_AllTagsMetaArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<TagModelFilter>;
   locale?: InputMaybe<SiteLocale>;
 };
 
@@ -2094,6 +2108,17 @@ export type QueryAllQuotesArgs = {
 
 
 /** The query root for this schema */
+export type QueryAllTagsArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<TagModelFilter>;
+  first?: InputMaybe<Scalars['IntType']>;
+  locale?: InputMaybe<SiteLocale>;
+  orderBy?: InputMaybe<Array<InputMaybe<TagModelOrderBy>>>;
+  skip?: InputMaybe<Scalars['IntType']>;
+};
+
+
+/** The query root for this schema */
 export type QueryAllUploadsArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   filter?: InputMaybe<UploadFilter>;
@@ -2144,6 +2169,15 @@ export type QueryQuoteArgs = {
   filter?: InputMaybe<QuoteModelFilter>;
   locale?: InputMaybe<SiteLocale>;
   orderBy?: InputMaybe<Array<InputMaybe<QuoteModelOrderBy>>>;
+};
+
+
+/** The query root for this schema */
+export type QueryTagArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<TagModelFilter>;
+  locale?: InputMaybe<SiteLocale>;
+  orderBy?: InputMaybe<Array<InputMaybe<TagModelOrderBy>>>;
 };
 
 
@@ -2347,6 +2381,71 @@ export type Tag = {
   attributes?: Maybe<Scalars['MetaTagAttributes']>;
   content?: Maybe<Scalars['String']>;
   tag: Scalars['String'];
+};
+
+export type TagModelFilter = {
+  OR?: InputMaybe<Array<InputMaybe<TagModelFilter>>>;
+  _createdAt?: InputMaybe<CreatedAtFilter>;
+  _firstPublishedAt?: InputMaybe<PublishedAtFilter>;
+  _isValid?: InputMaybe<BooleanFilter>;
+  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>;
+  _publishedAt?: InputMaybe<PublishedAtFilter>;
+  _status?: InputMaybe<StatusFilter>;
+  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>;
+  _updatedAt?: InputMaybe<UpdatedAtFilter>;
+  id?: InputMaybe<ItemIdFilter>;
+  orderNumber?: InputMaybe<IntegerFilter>;
+  text?: InputMaybe<StringFilter>;
+};
+
+export enum TagModelOrderBy {
+  CreatedAtAsc = '_createdAt_ASC',
+  CreatedAtDesc = '_createdAt_DESC',
+  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
+  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
+  IsValidAsc = '_isValid_ASC',
+  IsValidDesc = '_isValid_DESC',
+  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
+  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
+  PublishedAtAsc = '_publishedAt_ASC',
+  PublishedAtDesc = '_publishedAt_DESC',
+  StatusAsc = '_status_ASC',
+  StatusDesc = '_status_DESC',
+  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
+  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
+  UpdatedAtAsc = '_updatedAt_ASC',
+  UpdatedAtDesc = '_updatedAt_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  OrderNumberAsc = 'orderNumber_ASC',
+  OrderNumberDesc = 'orderNumber_DESC',
+  TextAsc = 'text_ASC',
+  TextDesc = 'text_DESC'
+}
+
+/** Record of type Tag (tag) */
+export type TagRecord = RecordInterface & {
+  __typename?: 'TagRecord';
+  _createdAt: Scalars['DateTime'];
+  _firstPublishedAt?: Maybe<Scalars['DateTime']>;
+  _isValid: Scalars['BooleanType'];
+  _modelApiKey: Scalars['String'];
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']>;
+  _publishedAt?: Maybe<Scalars['DateTime']>;
+  /** SEO meta tags */
+  _seoMetaTags: Array<Tag>;
+  _status: ItemStatus;
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']>;
+  _updatedAt: Scalars['DateTime'];
+  id: Scalars['ItemId'];
+  orderNumber?: Maybe<Scalars['IntType']>;
+  text: Scalars['String'];
+};
+
+
+/** Record of type Tag (tag) */
+export type TagRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>;
 };
 
 /** Specifies how to filter text fields */
@@ -2737,5 +2836,11 @@ export type GetLinksQueryVariables = Exact<{ [key: string]: never; }>;
 
 export type GetLinksQuery = { __typename?: 'Query', links: Array<{ __typename?: 'LinkRecord', linkType: string, url: string }> };
 
+export type GetTagsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetTagsQuery = { __typename?: 'Query', tags: Array<{ __typename?: 'TagRecord', text: string }> };
+
 
 export const GetLinksDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetLinks"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":{"kind":"Name","value":"links"},"name":{"kind":"Name","value":"allLinks"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"orderBy"},"value":{"kind":"EnumValue","value":"orderNumber_ASC"}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"linkType"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]} as unknown as DocumentNode<GetLinksQuery, GetLinksQueryVariables>;
+export const GetTagsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"GetTags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","alias":{"kind":"Name","value":"tags"},"name":{"kind":"Name","value":"allTags"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"orderBy"},"value":{"kind":"EnumValue","value":"orderNumber_ASC"}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"text"}}]}}]}}]} as unknown as DocumentNode<GetTagsQuery, GetTagsQueryVariables>;
