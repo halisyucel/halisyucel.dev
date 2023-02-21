@@ -38,7 +38,3 @@ next-env.d.ts
 # editor
 .vscode
 .idea
-
-# graphql
-schema.graphql
-.graphqlconfig
