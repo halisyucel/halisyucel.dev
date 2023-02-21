@@ -1,7 +1,6 @@
 import { ActionIcon, Divider, Flex, Stack } from '@mantine/core';
 import {
   IconBrandGithubCopilot,
-  IconBrandGraphql,
   IconFolder,
   IconGitCommit,
   IconList,
@@ -81,17 +80,9 @@ export default function Sidebar(): JSX.Element {
           >
             <IconTerminal2 size={16} />
           </ActionIcon>
-          <ActionIcon
-            variant="filled"
-            color="dark"
-            component={Link}
-            href="/schema"
-          >
-            <IconBrandGraphql size={16} stroke={1.5} />
-          </ActionIcon>
         </Stack>
       </Stack>
-      <Stack spacing={0} className="bg-neutral-800 p-2.5 rounded-md w-[280px]">
+      <Stack spacing={0} className="bg-neutral-800 p-2.5 rounded-md w-[240px]">
         <Suspense fallback={null}>{renderNavItem()}</Suspense>
       </Stack>
     </Flex>
