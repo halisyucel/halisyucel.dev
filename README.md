@@ -16,4 +16,4 @@ fikirler
 - code with me gibi socket kullanan bir cursor şeysi yapılabilir
 - terminal yapılabilir ve güzel komutlar eklenebilir
 - github commit historysi çekilecek bir şekilde ama nasıl
-- 
+- terminal komutlarına shutdown ekle
