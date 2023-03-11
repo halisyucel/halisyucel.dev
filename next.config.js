@@ -1,11 +1,7 @@
 /** @type {import('next').NextConfig} */
-
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const nextConfig = {
-	reactStrictMode: false,
-	i18n: {
-		locales: ['tr', 'en'],
-		defaultLocale: 'tr',
-	},
+  reactStrictMode: true,
 };
 
 module.exports = nextConfig;
